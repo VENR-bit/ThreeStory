@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rideekanda Forest Monastery — Three-Story Building</title>
+  <meta name="description" content="Support the expansion of Rideekanda Forest Monastery with a three-story building for meditation, monastic life, and spiritual growth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <style>
+    :root {
+      --paper:        #FAF6EC;
+      --paper-2:      #F1E9D2;
+      --ink:          #1A1612;
+      --ink-2:        #2F2820;
+      --ink-soft:     #6B6354;
+      --ink-faint:    #C9BEA0;
+      --accent:       #B3502A;
+      --accent-warm:  #E0A645;
+      --hand:         "DM Serif Display", Georgia, serif;
+      --body-hand:    "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:         "JetBrains Mono", ui-monospace, monospace;
+      --canvas-bg:    #E8E2D2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body-hand);
+      line-height: 1.55;
+    }
+
+    /* ---- NAV ---- */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 56px;
+      border-bottom: 1.5px solid var(--ink-faint);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+    }
+    .topbar-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--ink);
+    }
+    .topbar-logo img {
+      height: 40px; width: auto;
+    }
+    .topbar-logo span { font-family: var(--hand); font-size: 22px; }
+    .topbar-ext-links {
+      display: flex; gap: 10px; align-items: center;
+    }
+    .topbar-ext-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px;
+      border: 1.5px solid var(--ink);
+      background: transparent; color: var(--ink);
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .topbar-ext-btn:hover { background: var(--ink); color: var(--paper); }
+    .mobile-ext-links { display: none; }
+    .topbar-nav {
+      display: flex; gap: 26px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .topbar-nav a {
+      text-decoration: none; color: var(--ink-soft);
+      transition: color 0.2s;
+    }
+    .topbar-nav a:hover { color: var(--ink); }
+    .topbar-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      border: 2px solid var(--ink);
+      background: var(--ink); color: var(--paper);
+      font-family: var(--hand); font-size: 18px; font-weight: 600;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 var(--accent);
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .topbar-cta:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--accent); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 24px; color: var(--ink); }
+
+    /* ---- SHARED ---- */
+    .num {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.2em; color: var(--ink-soft);
+    }
+    .hand-h {
+      font-family: var(--hand); font-weight: 700;
+      line-height: 1.02; letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .hand-h em { font-style: italic; color: var(--accent); }
+    .body-p {
+      font-family: var(--body-hand); font-size: 16px;
+      line-height: 1.55; color: var(--ink-2);
+    }
+    .section-label {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+    }
+    .section-label .line { flex: 1; height: 1px; background: var(--ink-faint); }
+    .tag {
+      display: inline-block; padding: 3px 10px;
+      border: 1.5px solid var(--ink); border-radius: 4px;
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink); background: var(--paper);
+    }
+    .sketch-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      border: 2px solid var(--ink);
+      background: var(--ink); color: var(--paper);
+      font-family: var(--hand); font-size: 18px; font-weight: 600;
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 var(--accent);
+      text-decoration: none; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .sketch-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--accent); }
+    .sketch-btn-outline {
+      background: transparent; color: var(--ink);
+      box-shadow: none;
+    }
+    .sketch-btn-outline:hover { box-shadow: 3px 3px 0 var(--accent); }
+    .stamp {
+      display: inline-block; transform: rotate(-2deg);
+      padding: 6px 14px;
+      border: 2px solid var(--accent); color: var(--accent);
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      border-radius: 4px; background: var(--paper);
+    }
+
+    /* ---- HERO ---- */
+    .hero { padding: 100px 56px 80px; }
+    .hero-top { margin-bottom: 32px; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px; align-items: end; margin-top: 24px;
+    }
+    .hero h1 { font-size: 104px; margin-bottom: 28px; }
+    .hero-desc { font-size: 19px; max-width: 460px; font-family: var(--hand); line-height: 1.4; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 40px; padding-top: 24px;
+      border-top: 1.5px solid var(--ink-faint);
+    }
+    .hero-stats .hand-h { margin-top: 4px; }
+    .hero-img {
+      border: 2px solid var(--ink); overflow: hidden;
+      background: var(--paper-2);
+    }
+    .hero-img img { width: 100%; height: 360px; object-fit: cover; display: block; }
+
+    /* ---- INTRO ---- */
+    .intro { padding: 60px 56px 100px; max-width: 800px; margin: 0 auto; }
+    .intro h2 { font-size: 48px; margin: 20px 0 36px; }
+    .intro .body-p { font-size: 18px; font-family: var(--hand); line-height: 1.5; }
+
+    /* ---- VISION / FACILITIES ---- */
+    .vision {
+      padding: 80px 56px;
+      background: var(--paper-2);
+      border-top: 1.5px solid var(--ink-faint);
+      border-bottom: 1.5px solid var(--ink-faint);
+    }
+    .vision-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 50px;
+    }
+    .vision-header h2 { font-size: 48px; margin-top: 12px; }
+    .facilities-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px;
+    }
+    .facility-card {
+      padding: 22px; border: 2px solid var(--ink);
+      min-height: 180px; background: var(--paper);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .facility-card h3 {
+      font-family: var(--hand); font-weight: 700; font-size: 26px;
+      font-style: italic; margin-top: 10px; margin-bottom: 10px;
+    }
+    .facility-card .body-p { font-size: 14px; }
+    .facility-floor { color: var(--accent); }
+
+    /* ---- GALLERY ---- */
+    .gallery { padding: 80px 56px; }
+    .gallery-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 40px;
+    }
+    .gallery-header h2 { font-size: 48px; margin-top: 12px; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px;
+    }
+    .gallery-item {
+      border: 2px solid var(--ink); overflow: hidden;
+      background: var(--paper-2); cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery-item:hover { transform: scale(1.01); }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ---- VIDEO ---- */
+    .video-section { padding: 80px 56px; }
+    .video-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 40px;
+    }
+    .video-header h2 { font-size: 48px; margin-top: 12px; }
+    .video-wrap {
+      border: 2px solid var(--ink); overflow: hidden;
+      background: var(--ink);
+    }
+    .video-wrap video { width: 100%; display: block; }
+
+    /* ---- 3D MODEL ---- */
+    .model-section { padding: 80px 56px; background: var(--paper-2); border-top: 1.5px solid var(--ink-faint); border-bottom: 1.5px solid var(--ink-faint); }
+    .model-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 40px;
+    }
+    .model-header h2 { font-size: 48px; margin-top: 12px; }
+    .model-wrap {
+      border: 2px solid var(--ink); overflow: hidden;
+      background: var(--canvas-bg); position: relative;
+    }
+    .model-wrap model-viewer {
+      width: 100%; height: 520px; display: block;
+      --poster-color: var(--canvas-bg);
+    }
+    .model-controls {
+      display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; align-items: center;
+    }
+
+    /* ---- PROGRESS ---- */
+    .progress {
+      padding: 80px 56px;
+      background: var(--ink); color: var(--paper);
+    }
+    .progress-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 50px;
+    }
+    .progress-header h2 { font-size: 48px; margin-top: 12px; color: var(--paper); }
+    .progress-header .body-p { color: rgba(250,246,236,0.6); }
+    .progress-header .num { color: rgba(250,246,236,0.6); }
+    .floors-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(250,246,236,0.15);
+      border: 1px solid rgba(250,246,236,0.15);
+    }
+    .floor-card { background: var(--ink); padding: 32px; }
+    .floor-num {
+      font-family: var(--hand); font-size: 76px; line-height: 1;
+      font-style: italic;
+    }
+    .floor-num.done { color: var(--accent-warm); }
+    .floor-num.dim { color: rgba(250,246,236,0.15); }
+    .floor-num.active-num { color: var(--paper); }
+    .floor-card .floor-label {
+      margin-top: 14px; display: block;
+      color: rgba(250,246,236,0.6);
+    }
+    .floor-card h3 {
+      font-family: var(--hand); font-weight: 700; font-size: 26px;
+      font-style: italic; margin-top: 6px; color: var(--paper);
+    }
+    .floor-card .body-p { margin-top: 12px; font-size: 14px; color: rgba(250,246,236,0.6); }
+    .floor-bar { margin-top: 22px; height: 4px; background: rgba(250,246,236,0.08); border-radius: 2px; overflow: hidden; }
+    .floor-bar-fill { height: 100%; background: var(--accent-warm); }
+    .floor-status { margin-top: 12px; display: block; }
+    .floor-status.active { color: var(--accent-warm); }
+    .floor-status.soft { color: rgba(250,246,236,0.6); }
+
+    /* Estimate card */
+    .estimate-card {
+      margin-top: 50px; border: 2px solid rgba(250,246,236,0.15);
+      padding: 36px;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      gap: 40px; align-items: center;
+    }
+    .estimate-card .num { color: rgba(250,246,236,0.6); }
+    .estimate-card h3 {
+      font-family: var(--hand); font-weight: 700; font-size: 26px;
+      font-style: italic; margin-top: 10px; color: var(--paper);
+    }
+    .estimate-amount {
+      text-align: right;
+    }
+    .estimate-amount .big {
+      font-family: var(--hand); font-weight: 700; font-size: 84px;
+      line-height: 1.02; color: var(--accent-warm); margin-top: 6px;
+    }
+    .estimate-amount .big .unit { font-size: 36px; opacity: 0.6; }
+    .estimate-amount .big .currency { font-size: 22px; vertical-align: top; opacity: 0.6; }
+
+    /* ---- HOW TO HELP ---- */
+    .help { padding: 80px 56px; }
+    .help-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 50px;
+    }
+    .help-header h2 { font-size: 48px; margin-top: 12px; }
+    .help-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .help-card {
+      padding: 32px; border: 2px solid var(--ink); background: var(--paper);
+    }
+    .help-card .roman { font-family: var(--hand); font-weight: 700; font-size: 22px; font-style: italic; color: var(--accent); }
+    .help-card h3 { font-family: var(--hand); font-weight: 700; font-size: 32px; margin-top: 8px; }
+    .help-card .body-p { margin-top: 14px; font-size: 15px; }
+    .help-card .action { margin-top: 28px; display: block; }
+
+    /* ---- DONOR APPRECIATION ---- */
+    .appreciation {
+      padding: 80px 56px;
+      background: var(--paper-2);
+      border-top: 1.5px solid var(--ink-faint);
+    }
+    .appreciation-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px;
+    }
+    .appreciation h2 { font-size: 56px; margin-top: 12px; }
+    .appreciation-list { list-style: none; }
+    .appreciation-list li {
+      padding: 22px 0;
+      border-top: 1.5px solid var(--ink-faint);
+      display: grid; grid-template-columns: 36px 1fr;
+      gap: 20px; align-items: baseline;
+    }
+    .appreciation-list li:last-child { border-bottom: 1.5px solid var(--ink-faint); }
+
+    /* ---- DONATE / BANK ---- */
+    .donate { padding: 80px 56px; }
+    .donate-header {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 60px; align-items: end; margin-bottom: 40px;
+    }
+    .donate-header h2 { font-size: 48px; margin-top: 12px; }
+    .bank-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 30px; padding: 40px;
+      border: 2px solid var(--ink); background: var(--paper);
+    }
+    .bank-row {
+      display: grid; grid-template-columns: 120px 1fr 60px;
+      gap: 14px; padding: 12px 0;
+      border-bottom: 1px solid var(--ink-faint);
+      align-items: baseline;
+    }
+    .bank-row:last-child { border-bottom: none; }
+    .bank-value { font-family: var(--hand); font-weight: 700; font-size: 20px; }
+    .bank-contact {
+      padding: 24px; background: var(--paper-2);
+      border: 1.5px solid var(--ink-faint);
+    }
+    .bank-contact .phone {
+      font-family: var(--hand); font-weight: 700; font-size: 32px;
+      margin-top: 12px; margin-bottom: 8px;
+    }
+    .bank-contact .address {
+      font-family: var(--hand); font-size: 18px; line-height: 1.4;
+    }
+
+    /* ---- SINHALA ---- */
+    .sinhala {
+      padding: 80px 56px;
+      background: var(--paper-2);
+      border-top: 1.5px solid var(--ink-faint);
+      text-align: center;
+    }
+    .sinhala h2 {
+      font-family: var(--hand); font-weight: 700; font-size: 48px;
+      margin-top: 18px; line-height: 1.2;
+    }
+    .sinhala-body {
+      max-width: 720px; margin: 32px auto 0; text-align: left;
+      font-family: var(--body-hand); font-size: 16px; line-height: 1.8;
+      color: var(--ink-2);
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      padding: 60px 56px 36px;
+      background: var(--ink); color: var(--paper);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px; padding-bottom: 36px;
+      border-bottom: 1.5px solid rgba(250,246,236,0.08);
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .footer-logo img {
+      height: 40px; width: auto; filter: brightness(10);
+    }
+    .footer-quote {
+      margin-top: 18px; color: rgba(250,246,236,0.6);
+      font-style: italic; font-family: var(--hand); font-size: 18px;
+    }
+    .footer-col h4 {
+      font-family: var(--hand); font-size: 18px; font-style: italic;
+      font-weight: 700; color: var(--paper);
+    }
+    .footer-col p {
+      margin-top: 8px; color: rgba(250,246,236,0.6); font-size: 14px;
+    }
+    .footer-bottom {
+      padding-top: 18px;
+      display: flex; justify-content: space-between;
+    }
+    .footer-bottom .num { color: rgba(250,246,236,0.6); }
+
+    /* ---- LIGHTBOX ---- */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(26,22,18,0.92);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh; object-fit: contain;
+      border: 2px solid var(--ink-faint);
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 24px;
+      background: rgba(250,246,236,0.1); border: 2px solid rgba(250,246,236,0.2);
+      color: var(--paper); width: 48px; height: 48px;
+      border-radius: 50%; font-size: 24px; cursor: pointer;
+      font-family: var(--hand);
+    }
+    .lightbox-close:hover { background: rgba(250,246,236,0.2); }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(250,246,236,0.1); border: 2px solid rgba(250,246,236,0.2);
+      color: var(--paper); width: 48px; height: 48px;
+      border-radius: 50%; font-size: 24px; cursor: pointer;
+      font-family: var(--mono);
+    }
+    .lightbox-nav:hover { background: rgba(250,246,236,0.2); }
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+    .lightbox-counter {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em;
+      color: rgba(250,246,236,0.5);
+    }
+
+    /* Copy feedback */
+    .copy-toast {
+      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+      background: var(--ink); color: var(--accent-warm);
+      padding: 10px 24px; border-radius: 999px; border: 2px solid var(--accent-warm);
+      font-family: var(--hand); font-size: 18px; font-weight: 600;
+      z-index: 300; opacity: 0; transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .copy-toast.show { opacity: 1; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .topbar { padding: 14px 24px; }
+      .topbar-nav { display: none; }
+      .topbar-nav.open {
+        display: flex; flex-direction: column; gap: 16px;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--paper); padding: 24px;
+        border-bottom: 1.5px solid var(--ink-faint);
+      }
+      .topbar-nav.open .mobile-ext-links {
+        display: flex; flex-direction: column; gap: 10px;
+        padding-top: 16px; border-top: 1px solid var(--ink-faint);
+      }
+      .hamburger { display: block; }
+      .topbar-ext-links { display: none; }
+      .hero { padding: 60px 24px 40px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero h1 { font-size: 42px; word-break: break-word; }
+      .hero-desc { font-size: 16px; }
+      .hero-stats { gap: 12px; }
+      .hero-stats .hand-h { font-size: 20px !important; }
+      .hero-img img { height: auto; object-fit: contain; }
+      .intro { padding: 40px 24px 60px; }
+      .intro h2 { font-size: 32px; }
+      .vision, .gallery, .video-section, .model-section, .progress, .help, .donate, .sinhala, .appreciation { padding: 40px 24px; }
+      .vision-header, .gallery-header, .video-header, .model-header, .progress-header, .help-header, .donate-header { grid-template-columns: 1fr; gap: 16px; }
+      .vision-header h2, .gallery-header h2, .video-header h2, .model-header h2, .progress-header h2, .help-header h2, .donate-header h2 { font-size: 32px; }
+      .model-wrap model-viewer { height: 360px; }
+      .facilities-grid { grid-template-columns: 1fr; }
+      .facility-card { grid-column: span 1 !important; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item { grid-column: span 1 !important; height: 200px; }
+      .floors-grid { grid-template-columns: 1fr; }
+      .help-grid { grid-template-columns: 1fr; }
+      .appreciation-grid { grid-template-columns: 1fr; }
+      .appreciation h2 { font-size: 36px; }
+      .bank-grid { grid-template-columns: 1fr; }
+      .bank-row { grid-template-columns: 100px 1fr; }
+      .bank-row .tag { display: none; }
+      .estimate-card { grid-template-columns: 1fr; text-align: center; }
+      .estimate-amount { text-align: center; }
+      .estimate-amount .big { font-size: 56px; }
+      .footer { padding: 40px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <nav class="topbar">
+    <a href="#" class="topbar-logo">
+      <img src="images/logo.png" alt="Rideekanda Forest Monastery Logo">
+      <span>Rideekanda</span>
+    </a>
+    <div class="topbar-nav" id="navLinks">
+      <a href="#vision">Vision</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#model">3D Model</a>
+      <a href="#video">Film</a>
+      <a href="#progress">Progress</a>
+      <a href="#help">Support</a>
+      <div class="mobile-ext-links">
+        <a href="https://rideekanda.org" target="_blank" rel="noopener" class="topbar-ext-btn">Dashboard &#8599;</a>
+        <a href="https://www.rideekanda.com" target="_blank" rel="noopener" class="topbar-ext-btn">Official Site &#8599;</a>
+      </div>
+    </div>
+    <div class="topbar-ext-links">
+      <a href="https://rideekanda.org" target="_blank" rel="noopener" class="topbar-ext-btn">Dashboard &#8599;</a>
+      <a href="https://www.rideekanda.com" target="_blank" rel="noopener" class="topbar-ext-btn">Official Site &#8599;</a>
+      <a href="#donate" class="topbar-cta">Donate &#8599;</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <div class="hero-top">
+      <span class="num">&mdash; MATALE &middot; UDASGIRIYA &middot; SRI LANKA &mdash;</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="num" style="display:block;margin-bottom:18px;">A FOREST MONASTERY PROJECT &middot; EST. 2026</span>
+        <h1 class="hand-h">Elevate <em>our</em><br>sanctuary.</h1>
+        <p class="body-p hero-desc">
+          A three-story building rising in the forest above Matale &mdash; a place for meditation, teaching &amp; quiet monastic life.
+        </p>
+        <div class="hero-stats">
+          <div>
+            <span class="num">STORIES</span>
+            <div class="hand-h" style="font-size:26px;margin-top:4px;">Three</div>
+          </div>
+          <div>
+            <span class="num">FOOTPRINT</span>
+            <div class="hand-h" style="font-size:26px;margin-top:4px;">3,000 ft&sup2;</div>
+          </div>
+          <div>
+            <span class="num">PHASE</span>
+            <div class="hand-h" style="font-size:26px;margin-top:4px;font-style:italic;color:var(--accent);">Floor I</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="images/building-4.png" alt="Three-story building long view elevation">
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro fade-in">
+    <div class="section-label">
+      <span class="num">01 &middot; INTRODUCTION</span>
+      <span class="line"></span>
+      <span class="num">A NOTE FROM THE COMMUNITY</span>
+    </div>
+    <h2 class="hand-h" style="font-size:48px;margin:20px 0 36px;">
+      Nestled <em>in the</em><br>tranquility of nature.
+    </h2>
+    <p class="body-p" style="font-size:18px;font-family:var(--hand);line-height:1.5;">
+      Rideekanda Forest Monastery is a haven for spiritual seekers and a home for monastic life. To continue our legacy of providing a nurturing environment for reflection &amp; community, we are constructing a three-story building that will expand our facilities &amp; enhance our capacity to serve both local and international meditation practitioners.
+    </p>
+    <p class="body-p" style="font-size:18px;font-family:var(--hand);line-height:1.5;margin-top:24px;">
+      This expansion will allow us to welcome more individuals seeking peace and spiritual growth &mdash; a step towards nurturing a larger community grounded in the principles of mindfulness and compassion.
+    </p>
+  </section>
+
+  <!-- VISION / FACILITIES -->
+  <section class="vision fade-in" id="vision">
+    <div class="vision-header">
+      <div>
+        <span class="num">02 &middot; THE VISION</span>
+        <h2 class="hand-h">Five <em>spaces</em>, one quiet whole.</h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">Rooms for living and meeting; rooms for cooking and care. Each floor has its own rhythm and use.</p>
+    </div>
+    <div class="facilities-grid">
+      <div class="facility-card" style="grid-column:span 5;">
+        <div>
+          <span class="num">i.</span>
+          <h3>Main Hall</h3>
+          <p class="body-p">Meditation &middot; teachings &middot; gathering</p>
+        </div>
+        <span class="num facility-floor">&cularr; UPPER FLOOR</span>
+      </div>
+      <div class="facility-card" style="grid-column:span 4;">
+        <div>
+          <span class="num">ii.</span>
+          <h3>Accommodation</h3>
+          <p class="body-p">Quarters for monks &amp; visitors</p>
+        </div>
+        <span class="num facility-floor">&cularr; MIDDLE FLOOR</span>
+      </div>
+      <div class="facility-card" style="grid-column:span 3;">
+        <div>
+          <span class="num">iii.</span>
+          <h3>Alms Hall</h3>
+          <p class="body-p">The daily meal</p>
+        </div>
+        <span class="num facility-floor">&cularr; GROUND FLOOR</span>
+      </div>
+      <div class="facility-card" style="grid-column:span 4;">
+        <div>
+          <span class="num">iv.</span>
+          <h3>Kitchen</h3>
+          <p class="body-p">Modest, modern, nourishing</p>
+        </div>
+        <span class="num facility-floor">&cularr; GROUND FLOOR</span>
+      </div>
+      <div class="facility-card" style="grid-column:span 5;">
+        <div>
+          <span class="num">v.</span>
+          <h3>Utility &amp; Wash</h3>
+          <p class="body-p">Quiet infrastructure</p>
+        </div>
+        <span class="num facility-floor">&cularr; ALL FLOORS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery fade-in" id="gallery">
+    <div class="gallery-header">
+      <div>
+        <span class="num">03 &middot; ARCHITECTURAL STUDIES</span>
+        <h2 class="hand-h">Views, <em>elevations,</em> angles.</h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">A working set of perspectives and orthographic elevations from the 3D design model.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="grid-column:span 7;height:220px;" onclick="openLightbox(0)">
+        <img src="images/building-4.png" alt="SW perspective" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 5;height:220px;" onclick="openLightbox(1)">
+        <img src="images/building-2.png" alt="Front elevation" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(2)">
+        <img src="images/building-1.png" alt="Entrance facade" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(3)">
+        <img src="images/building-3.png" alt="Side view" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(4)">
+        <img src="images/building-5.png" alt="Rear elevation" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 6;height:180px;" onclick="openLightbox(5)">
+        <img src="images/building-6.png" alt="Aerial 3D perspective" loading="lazy">
+      </div>
+      <div class="gallery-item" style="grid-column:span 6;height:180px;" onclick="openLightbox(6)">
+        <img src="images/building-7.png" alt="Long facade with porch" loading="lazy">
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;align-items:center;">
+      <span class="tag">Perspective</span>
+      <span class="tag">Front</span>
+      <span class="tag">Side</span>
+      <span class="tag">Aerial</span>
+      <span class="tag">Rear</span>
+      <span style="flex:1;"></span>
+      <span class="num">CLICK TO ENLARGE &middot; &larr; / &rarr; TO NAVIGATE</span>
+    </div>
+  </section>
+
+  <!-- 3D MODEL -->
+  <section class="model-section fade-in" id="model">
+    <div class="model-header">
+      <div>
+        <span class="num">04 &middot; INTERACTIVE MODEL</span>
+        <h2 class="hand-h">Walk around <em>the building.</em></h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">Drag to orbit &middot; scroll to zoom &middot; double-tap to recenter.</p>
+    </div>
+    <div class="model-wrap">
+      <model-viewer
+        src="building-2-compressed.glb"
+        alt="Interactive 3D model of the three-story monastery building"
+        camera-controls
+        touch-action="pan-y"
+        auto-rotate
+        auto-rotate-delay="2000"
+        shadow-intensity="1"
+        exposure="1"
+        camera-orbit="45deg 65deg auto"
+        min-camera-orbit="auto auto auto"
+        max-camera-orbit="auto auto auto"
+        poster="images/building-6.png"
+        loading="lazy"
+        style="background-color: var(--canvas-bg);"
+      ></model-viewer>
+    </div>
+    <div class="model-controls">
+      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='45deg 65deg auto'">Default</button>
+      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='0deg 75deg auto'">Front</button>
+      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='90deg 75deg auto'">Side</button>
+      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='45deg 30deg auto'">Aerial</button>
+      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='180deg 75deg auto'">Rear</button>
+      <span style="flex:1;"></span>
+      <span class="num">DRAG &middot; SCROLL &middot; DBL-CLICK TO RECENTER</span>
+    </div>
+
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-section fade-in" id="video">
+    <div class="video-header">
+      <div>
+        <span class="num">05 &middot; 3D WALKTHROUGH FILM</span>
+        <h2 class="hand-h">A film of <em>the building.</em></h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">A 3D design walkthrough showing the building from every angle.</p>
+    </div>
+    <div class="video-wrap">
+      <video controls preload="metadata" poster="images/building-6.png">
+        <source src="ThreeStory Building3D design.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- PROGRESS -->
+  <section class="progress fade-in" id="progress">
+    <div class="progress-header">
+      <div>
+        <span class="num" style="color:rgba(250,246,236,0.6);">06 &middot; LATEST UPDATE</span>
+        <h2 class="hand-h">Where we are <span style="font-style:italic;color:var(--accent-warm);">today.</span></h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;color:rgba(250,246,236,0.6);">The ground floor is complete and in daily use. Now we turn our attention upward.</p>
+    </div>
+    <div class="floors-grid">
+      <div class="floor-card">
+        <div class="floor-num done">00</div>
+        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">GROUND FLOOR</span>
+        <h3>Complete &amp; in use.</h3>
+        <p class="body-p">Dining hall, kitchen, common bathrooms &mdash; built, finished, operating.</p>
+        <div class="floor-bar"><div class="floor-bar-fill" style="width:100%;"></div></div>
+        <span class="num floor-status" style="color:var(--accent-warm);">&bull; FUNCTIONING</span>
+      </div>
+      <div class="floor-card">
+        <div class="floor-num active-num">01</div>
+        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">FIRST FLOOR</span>
+        <h3>In progress.</h3>
+        <p class="body-p">Next milestone: the 3,000 ft&sup2; concrete slab.</p>
+        <div class="floor-bar"><div class="floor-bar-fill" style="width:14%;"></div></div>
+        <span class="num floor-status active">&bull; SLAB PENDING</span>
+      </div>
+      <div class="floor-card">
+        <div class="floor-num dim">02</div>
+        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">SECOND FLOOR</span>
+        <h3>Awaiting Floor 01.</h3>
+        <p class="body-p">The Main Hall will rise above the accommodation level.</p>
+        <div class="floor-bar"><div class="floor-bar-fill" style="width:0%;"></div></div>
+        <span class="num floor-status soft">&bull; PLANNED</span>
+      </div>
+    </div>
+
+    <div class="estimate-card">
+      <div>
+        <span class="num">IMMEDIATE NEED &middot; FLOOR 01 SLAB</span>
+        <h3>3,000 ft&sup2; of structural concrete &mdash; the next thing we build.</h3>
+      </div>
+      <div class="estimate-amount">
+        <span class="num">ESTIMATE</span>
+        <div class="big">5<span class="unit"> M</span><span class="currency"> LKR</span></div>
+        <a href="#donate" class="sketch-btn" style="margin-top:14px;background:var(--accent-warm);color:var(--ink);border-color:var(--accent-warm);">Help fund the slab &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO HELP -->
+  <section class="help fade-in" id="help">
+    <div class="help-header">
+      <div>
+        <span class="num">07 &middot; HOW YOU CAN HELP</span>
+        <h2 class="hand-h">Three ways to <em>take part.</em></h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">Every kind of contribution carries the project forward.</p>
+    </div>
+    <div class="help-grid">
+      <div class="help-card">
+        <span class="roman">i.</span>
+        <h3>Donate.</h3>
+        <p class="body-p">Any amount, any currency, received with gratitude.</p>
+        <span class="num action">&darr; BANK DETAILS BELOW</span>
+      </div>
+      <div class="help-card">
+        <span class="roman">ii.</span>
+        <h3>Share.</h3>
+        <p class="body-p">Send to anyone who may find meaning in the project.</p>
+        <span class="num action">&rarr; PASS IT ALONG</span>
+      </div>
+      <div class="help-card">
+        <span class="roman">iii.</span>
+        <h3>Engage.</h3>
+        <p class="body-p">Join events, write, visit. Presence is support.</p>
+        <a href="https://www.rideekanda.com/contact/" target="_blank" rel="noopener" class="num action" style="text-decoration:none;color:var(--ink-soft);">&rarr; RIDEEKANDA.COM</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONOR APPRECIATION -->
+  <section class="appreciation fade-in">
+    <div class="appreciation-grid">
+      <div>
+        <span class="num">08 &middot; DONOR APPRECIATION</span>
+        <h2 class="hand-h">With <em>gratitude.</em></h2>
+        <p class="body-p" style="margin-top:18px;">Small acknowledgements for an act of considerable generosity.</p>
+      </div>
+      <ul class="appreciation-list">
+        <li>
+          <span class="num">01</span>
+          <div class="hand-h" style="font-size:26px;">A personalized message of gratitude from the community.</div>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <div class="hand-h" style="font-size:26px;">Regular updates &amp; behind-the-scenes glimpses of the build.</div>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <div class="hand-h" style="font-size:26px;">An invitation to the building's inauguration ceremony.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section class="donate fade-in" id="donate">
+    <div class="donate-header">
+      <div>
+        <span class="num">09 &middot; DONATE</span>
+        <h2 class="hand-h">Bank details <em>for transfer.</em></h2>
+      </div>
+      <p class="body-p" style="padding-bottom:8px;">Donations are received by the Rideekanda Senasana Foundation.</p>
+    </div>
+    <div class="bank-grid">
+      <div>
+        <div class="bank-row">
+          <span class="num">ACCOUNT NAME</span>
+          <span class="bank-value">Rideekanda Senasana Foundation</span>
+          <button class="tag" onclick="copyText('Rideekanda Senasana Foundation')" style="cursor:pointer;">COPY</button>
+        </div>
+        <div class="bank-row">
+          <span class="num">ACCOUNT NO.</span>
+          <span class="bank-value">101490145572</span>
+          <button class="tag" onclick="copyText('101490145572')" style="cursor:pointer;">COPY</button>
+        </div>
+        <div class="bank-row">
+          <span class="num">BANK</span>
+          <span class="bank-value">NSB &middot; National Savings Bank</span>
+          <button class="tag" onclick="copyText('NSB')" style="cursor:pointer;">COPY</button>
+        </div>
+        <div class="bank-row">
+          <span class="num">BRANCH</span>
+          <span class="bank-value">City Plus / Head Office</span>
+          <button class="tag" onclick="copyText('NSB City Plus / Head Office')" style="cursor:pointer;">COPY</button>
+        </div>
+        <div class="bank-row">
+          <span class="num">SWIFT</span>
+          <span class="bank-value">NSBALKLX</span>
+          <button class="tag" onclick="copyText('NSBALKLX')" style="cursor:pointer;">COPY</button>
+        </div>
+      </div>
+      <div class="bank-contact">
+        <span class="num">FOR FURTHER DETAILS, CONTACT</span>
+        <div class="phone"><a href="tel:+94714283258" style="color:var(--ink);text-decoration:none;">+94 714 283 258</a></div>
+        <span class="num">DHANANJAYA B. HEENKENDA</span>
+        <div class="phone" style="margin-top:8px;"><a href="tel:+94742252980" style="color:var(--ink);text-decoration:none;">+94 742 252 980</a></div>
+        <span class="num">RIDEEKANDA OFFICIAL</span>
+        <div style="margin-top:22px;">
+          <a href="https://www.rideekanda.com/contact/" target="_blank" rel="noopener" class="sketch-btn">Visit rideekanda.com &rarr;</a>
+        </div>
+        <div style="margin-top:28px;padding-top:22px;border-top:1.5px solid var(--ink-faint);">
+          <span class="num">MAILING ADDRESS</span>
+          <p class="address" style="margin-top:8px;">
+            Rideekanda Forest Monastery<br>Udasgiriya, Matale<br>Sri Lanka
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINHALA -->
+  <section class="sinhala fade-in">
+    <span class="num">සිංහල</span>
+    <h2>මාතලේ උඩස්ගිරිය<br>රිදීකන්ද ආරණ්‍ය සේනාසනය</h2>
+    <div class="sinhala-body">
+      <p>
+        මාතලේ උඩස්ගිරිය රිදීකන්ද ආරණ්‍ය සේනාසනය නිර්වාණ මාර්ගය සොයන භාවනායෝගීන් සඳහා
+        මනා තෝතැන්නක් වන අතර හුදෙකලාව ආරණ්‍ය පැවිදිජීවිතය සඳහා ද නිවහනකි. පැමිණෙන දෙස්විදෙස්
+        භාවනායෝගීන්ට අවශ්‍ය පහසුකම් සැපයීමත්, තාවකාලික පැවදිපුහුණුවැඩසටහන් තවදුරටත් පුළුල්
+        කිරීමටත් අවශ්‍ය පරිසරයක් නිර්මාණය කිරීමේ අදහසින්, ආරණ්‍යයේ පහසුකම් පුළුල් කරන සහ අපගේ
+        සේවා හැකියාව වැඩිකරන තෙමහල් ගොඩනැගිල්ලක් ඉදිකිරීමේ අභිලාෂකාමී ව්‍යාපෘතියක් ආරම්භ
+        කරමු.
+      </p>
+      <p style="margin-top:20px;">
+        එම ගොඩනැගිල්ලේ පහත පහසුකම් සහිතව ගොඩනැගීමට බලාපොරොත්තු වෙමු.
+      </p>
+      <ul style="margin-top:12px;padding-left:20px;list-style:disc;">
+        <li><strong>ප්‍රධාන ශාලාව:</strong> භාවනා වැඩසටහන්, ඉගැන්වීම් සිදුකිරීමට</li>
+        <li><strong>නවාතැන් පහසුකම්:</strong> පුහුණු භික්ෂූන් වහන්සේලාට සහ භාවනා යෝගීන් සඳහා නවාතැන් පහසුකම්.</li>
+        <li><strong>දාන ශාලාව සහ මුළුතැන්ගෙය:</strong> ආහාර පිළියෙල කිරීම සඳහා නවීන පහසුකම්.</li>
+        <li><strong>වැසිකිළි පද්ධතිය:</strong> වැසිකිළි සහ සනීපාරක්ෂාව සඳහා අත්‍යවශ්‍ය පහසුකම්.</li>
+      </ul>
+      <p style="margin-top:20px;">
+        මෙම උතුම් ව්‍යාපෘතිය සාර්ථක කරගැනීමට දායක වෙමින් එම කුසල ශක්තියේ බලමහිමයෙන් ඔබටත් නිර්වාන
+        අවබෝධය පිණිස දස පාරමිතා පූර්ණය වීම පිණිස හේතු වාසනා වේවායි අප පර්ථනා කරමු.
+      </p>
+      <p style="margin-top:24px;text-align:center;">
+        <strong>රිදීකන්ද ආරණ්‍ය සේනාසනය.</strong><br>
+        උඩස්ගිරිය<br>
+        මාතලේ
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Rideekanda Logo">
+          <div class="hand-h" style="font-size:22px;color:var(--paper);">Rideekanda Forest Monastery</div>
+        </div>
+        <p class="footer-quote">"With gratitude &amp; mett&#257; &mdash; the Rideekanda community."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Udasgiriya, Matale, Sri Lanka</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>+94 714 283 258 &middot; +94 742 252 980<br><a href="https://www.rideekanda.com/contact/" target="_blank" rel="noopener" style="color:rgba(250,246,236,0.6);">rideekanda.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Phase</h4>
+        <p>Floor 01 &middot; Slab &middot; 5,000,000 LKR</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="num">&copy; 2026 RIDEEKANDA SENASANA FOUNDATION</span>
+      <span class="num">BUILT WITH METT&#256; &middot; FOR ALL BEINGS</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&lsaquo;</button>
+    <img id="lightboxImg" src="" alt="Gallery image">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&rsaquo;</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- COPY TOAST -->
+  <div class="copy-toast" id="copyToast">Copied!</div>
+
+  <script>
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.topbar-nav a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Lightbox
+    var images = [
+      'images/building-4.png',
+      'images/building-2.png',
+      'images/building-1.png',
+      'images/building-3.png',
+      'images/building-5.png',
+      'images/building-6.png',
+      'images/building-7.png'
+    ];
+    var currentIdx = 0;
+
+    function openLightbox(idx) {
+      currentIdx = idx;
+      document.getElementById('lightboxImg').src = images[idx];
+      document.getElementById('lightboxCounter').textContent = (idx + 1) + ' / ' + images.length;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+      currentIdx = (currentIdx + dir + images.length) % images.length;
+      document.getElementById('lightboxImg').src = images[currentIdx];
+      document.getElementById('lightboxCounter').textContent = (currentIdx + 1) + ' / ' + images.length;
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // Copy to clipboard
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        var toast = document.getElementById('copyToast');
+        toast.classList.add('show');
+        setTimeout(function() { toast.classList.remove('show'); }, 1500);
+      });
+    }
+
+    // Fade-in on scroll
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
