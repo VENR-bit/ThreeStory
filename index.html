@@ -44,11 +44,11 @@
       backdrop-filter: blur(10px);
     }
     .topbar-logo {
-      display: flex; align-items: center; gap: 12px;
+      position: absolute; left: 50%; transform: translateX(-50%);
       text-decoration: none; color: var(--ink);
     }
     .topbar-logo img {
-      height: 40px; width: auto;
+      height: 44px; width: auto;
     }
     .topbar-logo span { font-family: var(--hand); font-size: 22px; }
     .topbar-ext-links {
@@ -546,7 +546,6 @@
   <nav class="topbar">
     <a href="#" class="topbar-logo">
       <img src="images/logo.png" alt="Rideekanda Forest Monastery Logo">
-      <span>Rideekanda</span>
     </a>
     <div class="topbar-nav" id="navLinks">
       <a href="#vision">Vision</a>
