@@ -182,20 +182,27 @@
       gap: 60px; align-items: end; margin-bottom: 50px;
     }
     .vision-header h2 { font-size: 48px; margin-top: 12px; }
-    .facilities-grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px;
+    .facilities-table {
+      width: 100%; border-collapse: collapse; margin-top: 8px;
     }
-    .facility-card {
-      padding: 22px; border: 2px solid var(--ink);
-      min-height: 180px; background: var(--paper);
-      display: flex; flex-direction: column; justify-content: space-between;
+    .facilities-table th {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ink-soft); text-align: left;
+      padding: 12px 16px; border-bottom: 2px solid var(--ink);
     }
-    .facility-card h3 {
-      font-family: var(--hand); font-weight: 700; font-size: 26px;
-      font-style: italic; margin-top: 10px; margin-bottom: 10px;
+    .facilities-table td {
+      padding: 16px; border-bottom: 1px solid var(--ink-faint);
+      vertical-align: middle;
     }
-    .facility-card .body-p { font-size: 14px; }
-    .facility-floor { color: var(--accent); }
+    .facilities-table tr:last-child td { border-bottom: 2px solid var(--ink); }
+    .facilities-table .facility-name {
+      font-family: var(--hand); font-weight: 700; font-size: 22px;
+      font-style: italic;
+    }
+    .facilities-table .facility-floor {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent);
+    }
 
     /* ---- GALLERY ---- */
     .gallery { padding: 80px 56px; }
@@ -505,8 +512,8 @@
       .vision-header, .gallery-header, .video-header, .model-header, .progress-header, .help-header, .donate-header { grid-template-columns: 1fr; gap: 16px; }
       .vision-header h2, .gallery-header h2, .video-header h2, .model-header h2, .progress-header h2, .help-header h2, .donate-header h2 { font-size: 32px; }
       .model-wrap model-viewer { height: 360px; }
-      .facilities-grid { grid-template-columns: 1fr; }
-      .facility-card { grid-column: span 1 !important; }
+      .facilities-table th, .facilities-table td { padding: 12px 10px; font-size: 13px; }
+      .facilities-table .facility-name { font-size: 18px; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item { grid-column: span 1 !important; height: 200px; }
       .floors-grid { grid-template-columns: 1fr; }
@@ -620,48 +627,48 @@
       </div>
       <p class="body-p" style="padding-bottom:8px;">Rooms for living and meeting; rooms for cooking and care. Each floor has its own rhythm and use.</p>
     </div>
-    <div class="facilities-grid">
-      <div class="facility-card" style="grid-column:span 5;">
-        <div>
-          <span class="num">i.</span>
-          <h3>Main Hall</h3>
-          <p class="body-p">Meditation &middot; teachings &middot; gathering</p>
-        </div>
-        <span class="num facility-floor">&cularr; UPPER FLOOR</span>
-      </div>
-      <div class="facility-card" style="grid-column:span 4;">
-        <div>
-          <span class="num">ii.</span>
-          <h3>Accommodation</h3>
-          <p class="body-p">Quarters for monks &amp; visitors</p>
-        </div>
-        <span class="num facility-floor">&cularr; MIDDLE FLOOR</span>
-      </div>
-      <div class="facility-card" style="grid-column:span 3;">
-        <div>
-          <span class="num">iii.</span>
-          <h3>Alms Hall</h3>
-          <p class="body-p">The daily meal</p>
-        </div>
-        <span class="num facility-floor">&cularr; GROUND FLOOR</span>
-      </div>
-      <div class="facility-card" style="grid-column:span 4;">
-        <div>
-          <span class="num">iv.</span>
-          <h3>Kitchen</h3>
-          <p class="body-p">Modest, modern, nourishing</p>
-        </div>
-        <span class="num facility-floor">&cularr; GROUND FLOOR</span>
-      </div>
-      <div class="facility-card" style="grid-column:span 5;">
-        <div>
-          <span class="num">v.</span>
-          <h3>Utility &amp; Wash</h3>
-          <p class="body-p">Quiet infrastructure</p>
-        </div>
-        <span class="num facility-floor">&cularr; ALL FLOORS</span>
-      </div>
-    </div>
+    <table class="facilities-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Space</th>
+          <th>Purpose</th>
+          <th>Floor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">i.</td>
+          <td class="facility-name">Main Hall</td>
+          <td class="body-p">Meditation &middot; teachings &middot; gathering</td>
+          <td class="facility-floor">Upper Floor</td>
+        </tr>
+        <tr>
+          <td class="num">ii.</td>
+          <td class="facility-name">Accommodation</td>
+          <td class="body-p">Quarters for monks &amp; visitors</td>
+          <td class="facility-floor">Middle Floor</td>
+        </tr>
+        <tr>
+          <td class="num">iii.</td>
+          <td class="facility-name">Alms Hall</td>
+          <td class="body-p">The daily meal</td>
+          <td class="facility-floor">Ground Floor</td>
+        </tr>
+        <tr>
+          <td class="num">iv.</td>
+          <td class="facility-name">Kitchen</td>
+          <td class="body-p">Modest, modern, nourishing</td>
+          <td class="facility-floor">Ground Floor</td>
+        </tr>
+        <tr>
+          <td class="num">v.</td>
+          <td class="facility-name">Utility &amp; Wash</td>
+          <td class="body-p">Quiet infrastructure</td>
+          <td class="facility-floor">All Floors</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- GALLERY -->
