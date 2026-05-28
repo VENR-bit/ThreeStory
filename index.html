@@ -3,439 +3,416 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rideekanda Forest Monastery — Three-Story Building</title>
+  <title>Three-Story Building — Rideekanda Forest Monastery</title>
   <meta name="description" content="Support the expansion of Rideekanda Forest Monastery with a three-story building for meditation, monastic life, and spiritual growth.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   <style>
     :root {
-      --paper:        #FAF6EC;
-      --paper-2:      #F1E9D2;
-      --ink:          #1A1612;
-      --ink-2:        #2F2820;
-      --ink-soft:     #6B6354;
-      --ink-faint:    #C9BEA0;
-      --accent:       #B3502A;
-      --accent-warm:  #E0A645;
-      --hand:         "DM Serif Display", Georgia, serif;
-      --body-hand:    "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-      --mono:         "JetBrains Mono", ui-monospace, monospace;
-      --canvas-bg:    #E8E2D2;
+      --paper:       #FAF6EC;
+      --paper-2:     #F1E9D2;
+      --ink:         #1A1612;
+      --ink-2:       #2F2820;
+      --ink-soft:    #6B6354;
+      --ink-faint:   #C9BEA0;
+      --green:       #2F4F3A;
+      --green-light: #3A6348;
+      --accent:      #B3502A;
+      --accent-warm: #E0A645;
+      --hand:        "DM Serif Display", Georgia, serif;
+      --sans:        "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:        "JetBrains Mono", ui-monospace, monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--body-hand);
-      line-height: 1.55;
-    }
+    body { background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
 
     /* ---- NAV ---- */
-    .topbar {
+    .nav {
       position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 56px;
-      border-bottom: 1.5px solid var(--ink-faint);
-      background: var(--paper);
-      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(250,246,236,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    .topbar-logo {
-      position: absolute; left: 50%; transform: translateX(-50%);
-      text-decoration: none; color: var(--ink);
-    }
-    .topbar-logo img {
-      height: 44px; width: auto;
-    }
-    .topbar-logo span { font-family: var(--hand); font-size: 22px; }
-    .topbar-ext-links {
-      display: flex; gap: 10px; align-items: center;
-    }
-    .topbar-ext-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 14px;
-      border: 1.5px solid var(--ink);
-      background: transparent; color: var(--ink);
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-logo-text strong { font-family: var(--hand); font-size: 18px; font-weight: 700; }
+    .nav-logo-text small { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); }
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
       font-family: var(--mono); font-size: 10px; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.14em; text-transform: uppercase;
     }
-    .topbar-ext-btn:hover { background: var(--ink); color: var(--paper); }
-    .mobile-ext-links { display: none; }
-    .topbar-nav {
-      display: flex; gap: 26px;
-      font-family: var(--mono); font-size: 11px;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ink-soft);
+    .nav-links a { text-decoration: none; color: var(--ink-soft); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); font-weight: 700; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px;
+      background: var(--green); color: #fff;
+      font-family: var(--sans); font-size: 14px; font-weight: 600;
+      border: none; border-radius: 999px;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.2s;
     }
-    .topbar-nav a {
-      text-decoration: none; color: var(--ink-soft);
-      transition: color 0.2s;
-    }
-    .topbar-nav a:hover { color: var(--ink); }
-    .topbar-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 18px;
-      border: 2px solid var(--ink);
-      background: var(--ink); color: var(--paper);
-      font-family: var(--hand); font-size: 18px; font-weight: 600;
-      border-radius: 999px;
-      box-shadow: 3px 3px 0 var(--accent);
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .topbar-cta:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--accent); }
+    .nav-cta:hover { background: var(--green-light); }
     .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 24px; color: var(--ink); }
 
-    /* ---- SHARED ---- */
-    .num {
-      font-family: var(--mono); font-size: 11px;
-      letter-spacing: 0.2em; color: var(--ink-soft);
+    /* ---- HERO ---- */
+    .hero {
+      text-align: center;
+      padding: 80px 48px 60px;
+      max-width: 860px; margin: 0 auto;
     }
-    .hand-h {
-      font-family: var(--hand); font-weight: 700;
-      line-height: 1.02; letter-spacing: -0.01em;
+    .hero-logo { height: 64px; margin-bottom: 20px; }
+    .hero-label {
+      font-family: var(--mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--hand); font-size: 72px; font-weight: 700;
+      line-height: 1.05; letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub {
+      font-family: var(--hand); font-size: 20px; font-style: italic;
+      color: var(--ink-soft); line-height: 1.5;
+      max-width: 600px; margin: 0 auto 36px;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      background: var(--green); color: #fff;
+      font-family: var(--sans); font-size: 15px; font-weight: 600;
+      border: none; border-radius: 999px;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--green-light); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      background: transparent; color: var(--ink);
+      font-family: var(--sans); font-size: 15px; font-weight: 600;
+      border: 1.5px solid var(--ink-faint); border-radius: 999px;
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--ink); background: rgba(0,0,0,0.02); }
+
+    /* ---- HERO IMAGE ---- */
+    .hero-image {
+      max-width: 1060px; margin: 0 auto;
+      padding: 0 48px;
+    }
+    .hero-image-card {
+      position: relative;
+      background: var(--paper-2); border-radius: 16px;
+      overflow: hidden; border: 1px solid var(--ink-faint);
+    }
+    .hero-image-card img { width: 100%; height: auto; display: block; }
+    .hero-image-badge {
+      position: absolute; bottom: 20px; left: 20px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      background: #fff; border-radius: 999px;
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--ink);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .hand-h em { font-style: italic; color: var(--accent); }
-    .body-p {
-      font-family: var(--body-hand); font-size: 16px;
-      line-height: 1.55; color: var(--ink-2);
+    .hero-image-badge::before {
+      content: ''; width: 8px; height: 8px;
+      background: var(--green); border-radius: 50%;
+    }
+
+    /* ---- SECTION HEADERS (centered) ---- */
+    .section-header {
+      text-align: center;
+      max-width: 700px; margin: 0 auto 48px;
     }
     .section-label {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
-    }
-    .section-label .line { flex: 1; height: 1px; background: var(--ink-faint); }
-    .tag {
-      display: inline-block; padding: 3px 10px;
-      border: 1.5px solid var(--ink); border-radius: 4px;
-      font-family: var(--mono); font-size: 10px;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ink); background: var(--paper);
-    }
-    .sketch-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 18px;
-      border: 2px solid var(--ink);
-      background: var(--ink); color: var(--paper);
-      font-family: var(--hand); font-size: 18px; font-weight: 600;
-      border-radius: 999px;
-      box-shadow: 3px 3px 0 var(--accent);
-      text-decoration: none; cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .sketch-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--accent); }
-    .sketch-btn-outline {
-      background: transparent; color: var(--ink);
-      box-shadow: none;
-    }
-    .sketch-btn-outline:hover { box-shadow: 3px 3px 0 var(--accent); }
-    .stamp {
-      display: inline-block; transform: rotate(-2deg);
-      padding: 6px 14px;
-      border: 2px solid var(--accent); color: var(--accent);
-      font-family: var(--mono); font-size: 11px;
+      font-family: var(--mono); font-size: 11px; font-weight: 500;
       letter-spacing: 0.2em; text-transform: uppercase;
-      border-radius: 4px; background: var(--paper);
+      color: var(--green); margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-family: var(--hand); font-size: 48px; font-weight: 700;
+      line-height: 1.1; color: var(--ink); margin-bottom: 16px;
+    }
+    .section-header h2 em { font-style: italic; color: var(--accent); }
+    .section-header p {
+      font-family: var(--hand); font-size: 18px; font-style: italic;
+      color: var(--ink-soft); line-height: 1.5;
     }
 
-    /* ---- HERO ---- */
-    .hero { padding: 100px 56px 80px; }
-    .hero-top { margin-bottom: 32px; }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.05fr 0.95fr;
-      gap: 60px; align-items: end; margin-top: 24px;
+    /* ---- VISION SECTION ---- */
+    .vision { padding: 100px 48px; }
+    .vision-content {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start;
+      max-width: 1060px; margin: 0 auto;
     }
-    .hero h1 { font-size: 104px; margin-bottom: 28px; }
-    .hero-desc { font-size: 19px; max-width: 460px; font-family: var(--hand); line-height: 1.4; }
-    .hero-stats {
+    .vision-text h2 {
+      font-family: var(--hand); font-size: 44px; font-weight: 700;
+      line-height: 1.1; margin-bottom: 24px;
+    }
+    .vision-text h2 em { font-style: italic; color: var(--accent); }
+    .vision-text p {
+      font-family: var(--hand); font-size: 17px; font-style: italic;
+      color: var(--ink-soft); line-height: 1.6; margin-bottom: 16px;
+    }
+    .vision-cards {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .vision-card {
+      padding: 28px;
+      background: rgba(250,246,236,0.6);
+      border: 1px solid var(--ink-faint);
+      border-radius: 14px;
+    }
+    .vision-card-icon {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--paper); border: 1px solid var(--ink-faint);
+      border-radius: 10px; margin-bottom: 14px;
+      font-size: 20px; color: var(--ink-soft);
+    }
+    .vision-card h3 {
+      font-family: var(--hand); font-size: 20px; font-weight: 700;
+      font-style: italic; margin-bottom: 8px;
+    }
+    .vision-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+    /* ---- 3D MODEL ---- */
+    .model-section { padding: 100px 48px; }
+    .model-card {
+      max-width: 1060px; margin: 0 auto;
+      background: var(--ink); border-radius: 16px; overflow: hidden;
+      border: 1px solid rgba(250,246,236,0.1);
+      position: relative;
+    }
+    .model-card model-viewer {
+      width: 100%; height: 520px; display: block;
+      --poster-color: #1A1612;
+    }
+    .model-badge {
+      position: absolute; top: 16px; left: 16px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px;
+      background: rgba(250,246,236,0.1);
+      border: 1px solid rgba(250,246,236,0.15);
+      border-radius: 999px;
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(250,246,236,0.7);
+      z-index: 2;
+    }
+    .model-badge::before {
+      content: ''; width: 7px; height: 7px;
+      background: #4ade80; border-radius: 50%;
+    }
+    .model-hints {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px; margin-top: 40px; padding-top: 24px;
-      border-top: 1.5px solid var(--ink-faint);
+      gap: 0; max-width: 1060px; margin: 20px auto 0;
     }
-    .hero-stats .hand-h { margin-top: 4px; }
-    .hero-img {
-      border: 2px solid var(--ink); overflow: hidden;
-      background: var(--paper-2);
+    .model-hint { padding: 16px 0; }
+    .model-hint-label {
+      font-family: var(--mono); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 4px;
     }
-    .hero-img img { width: 100%; height: auto; object-fit: contain; display: block; }
-
-    /* ---- INTRO ---- */
-    .intro { padding: 60px 56px 100px; max-width: 800px; margin: 0 auto; }
-    .intro h2 { font-size: 48px; margin: 20px 0 36px; }
-    .intro .body-p { font-size: 18px; font-family: var(--hand); line-height: 1.5; }
-
-    /* ---- VISION / FACILITIES ---- */
-    .vision {
-      padding: 80px 56px;
-      background: var(--paper-2);
-      border-top: 1.5px solid var(--ink-faint);
-      border-bottom: 1.5px solid var(--ink-faint);
-    }
-    .vision-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 50px;
-    }
-    .vision-header h2 { font-size: 48px; margin-top: 12px; }
-    .facilities-table {
-      width: 100%; border-collapse: collapse; margin-top: 8px;
-    }
-    .facilities-table th {
-      font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--ink-soft); text-align: center;
-      padding: 12px 16px; border-bottom: 2px solid var(--ink);
-    }
-    .facilities-table td {
-      padding: 16px; border-bottom: 1px solid var(--ink-faint);
-      vertical-align: middle; text-align: center;
-    }
-    .facilities-table tr:last-child td { border-bottom: 2px solid var(--ink); }
-    .facilities-table .facility-name {
-      font-family: var(--hand); font-weight: 700; font-size: 22px;
-      font-style: italic;
-    }
-    .facilities-table .facility-floor {
-      font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--accent);
-    }
+    .model-hint h4 { font-family: var(--hand); font-size: 18px; font-style: italic; margin-bottom: 2px; }
+    .model-hint p { font-size: 13px; color: var(--ink-soft); font-style: italic; font-family: var(--hand); }
 
     /* ---- GALLERY ---- */
-    .gallery { padding: 80px 56px; }
-    .gallery-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 40px;
-    }
-    .gallery-header h2 { font-size: 48px; margin-top: 12px; }
+    .gallery { padding: 100px 48px; }
     .gallery-grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px;
+      display: grid; gap: 14px;
+      max-width: 1060px; margin: 0 auto;
+      grid-template-columns: repeat(12, 1fr);
     }
     .gallery-item {
-      border: 2px solid var(--ink); overflow: hidden;
-      background: var(--paper-2); cursor: pointer;
-      transition: transform 0.2s;
+      position: relative; overflow: hidden;
+      border-radius: 12px; cursor: pointer;
+      transition: transform 0.25s;
     }
-    .gallery-item:hover { transform: scale(1.01); }
+    .gallery-item:hover { transform: scale(1.015); }
     .gallery-item img {
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
+    .gallery-item-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 20px;
+      background: linear-gradient(transparent, rgba(26,22,18,0.7));
+      color: #fff;
+    }
+    .gallery-item-overlay .num {
+      font-family: var(--mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); margin-bottom: 4px; display: block;
+    }
+    .gallery-item-overlay .caption {
+      font-family: var(--hand); font-size: 18px; font-style: italic; color: #fff;
+    }
 
     /* ---- VIDEO ---- */
-    .video-section { padding: 80px 56px; }
-    .video-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 40px;
-    }
-    .video-header h2 { font-size: 48px; margin-top: 12px; }
-    .video-wrap {
-      border: 2px solid var(--ink); overflow: hidden;
+    .video-section { padding: 100px 48px; }
+    .video-card {
+      max-width: 1060px; margin: 0 auto;
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--ink-faint);
       background: var(--ink);
     }
-    .video-wrap iframe { width: 100%; aspect-ratio: 16/9; display: block; }
-
-    /* ---- 3D MODEL ---- */
-    .model-section { padding: 80px 56px; background: var(--paper-2); border-top: 1.5px solid var(--ink-faint); border-bottom: 1.5px solid var(--ink-faint); }
-    .model-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 40px;
-    }
-    .model-header h2 { font-size: 48px; margin-top: 12px; }
-    .model-wrap {
-      border: 2px solid var(--ink); overflow: hidden;
-      background: var(--canvas-bg); position: relative;
-    }
-    .model-wrap model-viewer {
-      width: 100%; height: 520px; display: block;
-      --poster-color: var(--canvas-bg);
-    }
-    .model-controls {
-      display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; align-items: center;
-    }
+    .video-card iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
 
     /* ---- PROGRESS ---- */
-    .progress {
-      padding: 80px 56px;
-      background: var(--ink); color: var(--paper);
-    }
-    .progress-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 50px;
-    }
-    .progress-header h2 { font-size: 48px; margin-top: 12px; color: var(--paper); }
-    .progress-header .body-p { color: rgba(250,246,236,0.6); }
-    .progress-header .num { color: rgba(250,246,236,0.6); }
-    .floors-grid {
+    .progress { padding: 100px 48px; }
+    .progress-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: rgba(250,246,236,0.15);
-      border: 1px solid rgba(250,246,236,0.15);
+      gap: 14px; max-width: 1060px; margin: 0 auto 40px;
     }
-    .floor-card { background: var(--ink); padding: 32px; }
+    .floor-card {
+      padding: 32px;
+      background: var(--paper-2); border-radius: 14px;
+      border: 1px solid var(--ink-faint);
+    }
     .floor-num {
-      font-family: var(--hand); font-size: 76px; line-height: 1;
-      font-style: italic;
+      font-family: var(--hand); font-size: 64px; line-height: 1;
+      font-style: italic; margin-bottom: 8px;
     }
     .floor-num.done { color: var(--accent-warm); }
-    .floor-num.dim { color: rgba(250,246,236,0.15); }
-    .floor-num.active-num { color: var(--paper); }
-    .floor-card .floor-label {
-      margin-top: 14px; display: block;
-      color: rgba(250,246,236,0.6);
+    .floor-num.active-num { color: var(--green); }
+    .floor-num.dim { color: var(--ink-faint); }
+    .floor-label {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-soft); margin-bottom: 6px; display: block;
     }
     .floor-card h3 {
-      font-family: var(--hand); font-weight: 700; font-size: 26px;
-      font-style: italic; margin-top: 6px; color: var(--paper);
+      font-family: var(--hand); font-size: 24px; font-weight: 700;
+      font-style: italic; margin-bottom: 8px;
     }
-    .floor-card .body-p { margin-top: 12px; font-size: 14px; color: rgba(250,246,236,0.6); }
-    .floor-bar { margin-top: 22px; height: 4px; background: rgba(250,246,236,0.08); border-radius: 2px; overflow: hidden; }
-    .floor-bar-fill { height: 100%; background: var(--accent-warm); }
-    .floor-status { margin-top: 12px; display: block; }
-    .floor-status.active { color: var(--accent-warm); }
-    .floor-status.soft { color: rgba(250,246,236,0.6); }
+    .floor-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+    .floor-bar { margin-top: 20px; height: 4px; background: rgba(0,0,0,0.06); border-radius: 2px; overflow: hidden; }
+    .floor-bar-fill { height: 100%; border-radius: 2px; }
+    .floor-bar-fill.done { background: var(--accent-warm); }
+    .floor-bar-fill.active { background: var(--green); }
+    .floor-status {
+      display: block; margin-top: 10px;
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .floor-status.status-done { color: var(--accent-warm); }
+    .floor-status.status-active { color: var(--green); }
+    .floor-status.status-dim { color: var(--ink-soft); }
 
     /* Estimate card */
     .estimate-card {
-      margin-top: 50px; border: 2px solid rgba(250,246,236,0.15);
-      padding: 36px;
+      max-width: 1060px; margin: 0 auto;
+      padding: 40px;
+      background: var(--ink); border-radius: 16px;
       display: grid; grid-template-columns: 1.2fr 1fr;
       gap: 40px; align-items: center;
+      color: var(--paper);
     }
-    .estimate-card .num { color: rgba(250,246,236,0.6); }
+    .estimate-card .label {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(250,246,236,0.5);
+    }
     .estimate-card h3 {
-      font-family: var(--hand); font-weight: 700; font-size: 26px;
+      font-family: var(--hand); font-size: 26px; font-weight: 700;
       font-style: italic; margin-top: 10px; color: var(--paper);
     }
-    .estimate-amount {
-      text-align: right;
-    }
+    .estimate-amount { text-align: right; }
     .estimate-amount .big {
-      font-family: var(--hand); font-weight: 700; font-size: 84px;
-      line-height: 1.02; color: var(--accent-warm); margin-top: 6px;
+      font-family: var(--hand); font-size: 72px; font-weight: 700;
+      line-height: 1; color: var(--accent-warm);
     }
-    .estimate-amount .big .unit { font-size: 36px; opacity: 0.6; }
-    .estimate-amount .big .currency { font-size: 22px; vertical-align: top; opacity: 0.6; }
+    .estimate-amount .big .unit { font-size: 32px; opacity: 0.6; }
+    .estimate-amount .big .currency { font-size: 20px; vertical-align: top; opacity: 0.6; }
 
-    /* ---- HOW TO HELP ---- */
-    .help { padding: 80px 56px; }
-    .help-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 50px;
+    /* ---- DONATE / SUPPORT ---- */
+    .support {
+      padding: 100px 48px;
+      text-align: center;
     }
-    .help-header h2 { font-size: 48px; margin-top: 12px; }
-    .help-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    .support-inner {
+      max-width: 700px; margin: 0 auto;
     }
-    .help-card {
-      padding: 32px; border: 2px solid var(--ink); background: var(--paper);
+    .support h2 {
+      font-family: var(--hand); font-size: 48px; font-weight: 700;
+      line-height: 1.1; margin-bottom: 20px;
     }
-    .help-card .roman { font-family: var(--hand); font-weight: 700; font-size: 22px; font-style: italic; color: var(--accent); }
-    .help-card h3 { font-family: var(--hand); font-weight: 700; font-size: 32px; margin-top: 8px; }
-    .help-card .body-p { margin-top: 14px; font-size: 15px; }
-    .help-card .action { margin-top: 28px; display: block; }
-
-    /* ---- DONOR APPRECIATION ---- */
-    .appreciation {
-      padding: 80px 56px;
-      background: var(--paper-2);
-      border-top: 1.5px solid var(--ink-faint);
+    .support h2 em { font-style: italic; color: var(--accent); }
+    .support > .support-inner > p {
+      font-family: var(--hand); font-size: 18px; font-style: italic;
+      color: var(--ink-soft); line-height: 1.5;
+      margin-bottom: 36px;
     }
-    .appreciation-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px;
+    .support-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .support-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 560px; margin: 0 auto;
+      padding-top: 40px;
+      border-top: 1px solid var(--ink-faint);
     }
-    .appreciation h2 { font-size: 56px; margin-top: 12px; }
-    .appreciation-list { list-style: none; }
-    .appreciation-list li {
-      padding: 22px 0;
-      border-top: 1.5px solid var(--ink-faint);
-      display: grid; grid-template-columns: 36px 1fr;
-      gap: 20px; align-items: baseline;
+    .support-stat-num {
+      font-family: var(--hand); font-size: 36px; font-weight: 700;
+      color: var(--ink); margin-bottom: 4px;
     }
-    .appreciation-list li:last-child { border-bottom: 1.5px solid var(--ink-faint); }
-
-    /* ---- DONATE / BANK ---- */
-    .donate { padding: 80px 56px; }
-    .donate-header {
-      display: grid; grid-template-columns: 1fr 2fr;
-      gap: 60px; align-items: end; margin-bottom: 40px;
-    }
-    .donate-header h2 { font-size: 48px; margin-top: 12px; }
-    .bank-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 30px; padding: 40px;
-      border: 2px solid var(--ink); background: var(--paper);
-    }
-    .bank-row {
-      display: grid; grid-template-columns: 120px 1fr 60px;
-      gap: 14px; padding: 12px 0;
-      border-bottom: 1px solid var(--ink-faint);
-      align-items: baseline;
-    }
-    .bank-row:last-child { border-bottom: none; }
-    .bank-value { font-family: var(--hand); font-weight: 700; font-size: 20px; }
-    .bank-contact {
-      padding: 24px; background: var(--paper-2);
-      border: 1.5px solid var(--ink-faint);
-    }
-    .bank-contact .phone {
-      font-family: var(--hand); font-weight: 700; font-size: 32px;
-      margin-top: 12px; margin-bottom: 8px;
-    }
-    .bank-contact .address {
-      font-family: var(--hand); font-size: 18px; line-height: 1.4;
+    .support-stat-label {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-soft);
     }
 
     /* ---- SINHALA ---- */
     .sinhala {
-      padding: 80px 56px;
-      background: var(--paper-2);
-      border-top: 1.5px solid var(--ink-faint);
-      text-align: center;
+      padding: 80px 48px;
+      background: var(--paper-2); text-align: center;
+    }
+    .sinhala-label {
+      font-family: var(--mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; color: var(--ink-soft);
     }
     .sinhala h2 {
-      font-family: var(--hand); font-weight: 700; font-size: 48px;
-      margin-top: 18px; line-height: 1.2;
+      font-family: var(--hand); font-size: 40px; font-weight: 700;
+      margin-top: 16px; line-height: 1.3;
     }
     .sinhala-body {
-      max-width: 720px; margin: 32px auto 0; text-align: left;
-      font-family: var(--body-hand); font-size: 16px; line-height: 1.8;
-      color: var(--ink-2);
+      max-width: 680px; margin: 28px auto 0; text-align: left;
+      font-size: 15px; line-height: 1.9; color: var(--ink-2);
     }
 
     /* ---- FOOTER ---- */
     .footer {
-      padding: 60px 56px 36px;
-      background: var(--ink); color: var(--paper);
+      padding: 48px 48px 32px;
+      text-align: center;
     }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 36px; padding-bottom: 36px;
-      border-bottom: 1.5px solid rgba(250,246,236,0.08);
-    }
-    .footer-logo {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .footer-logo img {
-      height: 40px; width: auto; filter: brightness(10);
+    .footer-brand {
+      font-family: var(--mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-soft); margin-bottom: 12px;
     }
     .footer-quote {
-      margin-top: 18px; color: rgba(250,246,236,0.6);
-      font-style: italic; font-family: var(--hand); font-size: 18px;
-    }
-    .footer-col h4 {
       font-family: var(--hand); font-size: 18px; font-style: italic;
-      font-weight: 700; color: var(--paper);
+      color: var(--ink-soft); margin-bottom: 20px;
     }
-    .footer-col p {
-      margin-top: 8px; color: rgba(250,246,236,0.6); font-size: 14px;
+    .footer-copy {
+      font-family: var(--sans); font-size: 13px;
+      color: var(--ink-faint);
     }
-    .footer-bottom {
-      padding-top: 18px;
-      display: flex; justify-content: space-between;
-    }
-    .footer-bottom .num { color: rgba(250,246,236,0.6); }
 
     /* ---- LIGHTBOX ---- */
     .lightbox {
@@ -446,22 +423,22 @@
     .lightbox.active { display: flex; }
     .lightbox img {
       max-width: 90vw; max-height: 85vh; object-fit: contain;
-      border: 2px solid var(--ink-faint);
+      border-radius: 12px;
     }
     .lightbox-close {
       position: absolute; top: 24px; right: 24px;
-      background: rgba(250,246,236,0.1); border: 2px solid rgba(250,246,236,0.2);
-      color: var(--paper); width: 48px; height: 48px;
-      border-radius: 50%; font-size: 24px; cursor: pointer;
-      font-family: var(--hand);
+      background: rgba(250,246,236,0.1); border: 1px solid rgba(250,246,236,0.2);
+      color: var(--paper); width: 44px; height: 44px;
+      border-radius: 50%; font-size: 22px; cursor: pointer;
+      font-family: var(--sans); display: flex; align-items: center; justify-content: center;
     }
     .lightbox-close:hover { background: rgba(250,246,236,0.2); }
     .lightbox-nav {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(250,246,236,0.1); border: 2px solid rgba(250,246,236,0.2);
-      color: var(--paper); width: 48px; height: 48px;
-      border-radius: 50%; font-size: 24px; cursor: pointer;
-      font-family: var(--mono);
+      background: rgba(250,246,236,0.1); border: 1px solid rgba(250,246,236,0.2);
+      color: var(--paper); width: 44px; height: 44px;
+      border-radius: 50%; font-size: 22px; cursor: pointer;
+      font-family: var(--mono); display: flex; align-items: center; justify-content: center;
     }
     .lightbox-nav:hover { background: rgba(250,246,236,0.2); }
     .lightbox-prev { left: 24px; }
@@ -472,249 +449,144 @@
       color: rgba(250,246,236,0.5);
     }
 
-    /* Copy feedback */
-    .copy-toast {
-      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
-      background: var(--ink); color: var(--accent-warm);
-      padding: 10px 24px; border-radius: 999px; border: 2px solid var(--accent-warm);
-      font-family: var(--hand); font-size: 18px; font-weight: 600;
-      z-index: 300; opacity: 0; transition: opacity 0.3s;
-      pointer-events: none;
-    }
-    .copy-toast.show { opacity: 1; }
+    /* ---- FADE-IN ---- */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ---- RESPONSIVE ---- */
     @media (max-width: 900px) {
-      .topbar { padding: 14px 24px; }
-      .topbar-nav { display: none; }
-      .topbar-nav.open {
-        display: flex; flex-direction: column; gap: 16px;
+      .nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; gap: 14px;
         position: absolute; top: 100%; left: 0; right: 0;
-        background: var(--paper); padding: 24px;
-        border-bottom: 1.5px solid var(--ink-faint);
+        background: var(--paper); padding: 24px 20px;
+        border-bottom: 1px solid var(--ink-faint);
+        z-index: 99;
       }
-      .topbar-nav.open .mobile-ext-links {
-        display: flex; flex-direction: column; gap: 10px;
-        padding-top: 16px; border-top: 1px solid var(--ink-faint);
-      }
+      .nav-links.open .nav-cta { align-self: flex-start; }
       .hamburger { display: block; }
-      .topbar-ext-links { display: none; }
-      .hero { padding: 60px 24px 40px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero h1 { font-size: 42px; word-break: break-word; }
-      .hero-desc { font-size: 16px; }
-      .hero-stats { gap: 12px; }
-      .hero-stats .hand-h { font-size: 20px !important; }
-      .hero-img img { height: auto; object-fit: contain; }
-      .intro { padding: 40px 24px 60px; }
-      .intro h2 { font-size: 32px; }
-      .vision, .gallery, .video-section, .model-section, .progress, .help, .donate, .sinhala, .appreciation { padding: 40px 24px; }
-      .vision-header, .gallery-header, .video-header, .model-header, .progress-header, .help-header, .donate-header { grid-template-columns: 1fr; gap: 16px; }
-      .vision-header h2, .gallery-header h2, .video-header h2, .model-header h2, .progress-header h2, .help-header h2, .donate-header h2 { font-size: 32px; }
-      .model-wrap model-viewer { height: 360px; }
-      .facilities-table th, .facilities-table td { padding: 12px 10px; font-size: 13px; }
-      .facilities-table .facility-name { font-size: 18px; }
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 36px; }
+      .hero-sub { font-size: 16px; }
+      .hero-logo { height: 48px; }
+      .hero-image { padding: 0 20px; }
+      .vision { padding: 60px 20px; }
+      .vision-content { grid-template-columns: 1fr; gap: 32px; }
+      .vision-text h2 { font-size: 32px; }
+      .vision-cards { grid-template-columns: 1fr; }
+      .section-header { padding: 0 20px; }
+      .section-header h2 { font-size: 32px; }
+      .model-section, .gallery, .video-section, .progress, .support, .sinhala { padding: 60px 20px; }
+      .model-card model-viewer { height: 320px; }
+      .model-hints { grid-template-columns: 1fr; gap: 8px; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item { grid-column: span 1 !important; height: 200px; }
-      .floors-grid { grid-template-columns: 1fr; }
-      .help-grid { grid-template-columns: 1fr; }
-      .appreciation-grid { grid-template-columns: 1fr; }
-      .appreciation h2 { font-size: 36px; }
-      .bank-grid { grid-template-columns: 1fr; }
-      .bank-row { grid-template-columns: 100px 1fr; }
-      .bank-row .tag { display: none; }
-      .bank-contact .phone { font-size: 20px; }
-      .estimate-card { grid-template-columns: 1fr; text-align: center; }
+      .progress-grid { grid-template-columns: 1fr; }
+      .estimate-card { grid-template-columns: 1fr; text-align: center; padding: 28px; }
       .estimate-amount { text-align: center; }
-      .estimate-amount .big { font-size: 56px; }
-      .footer { padding: 40px 24px 24px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-      .footer-bottom { flex-direction: column; gap: 8px; }
+      .estimate-amount .big { font-size: 48px; }
+      .support h2 { font-size: 32px; }
+      .support-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .support-stat-num { font-size: 28px; }
+      .footer { padding: 40px 20px 24px; }
+      .sinhala h2 { font-size: 28px; }
     }
-
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR -->
-  <nav class="topbar">
-    <a href="#" class="topbar-logo">
-      <img src="images/logo.png" alt="Rideekanda Forest Monastery Logo">
+  <!-- NAV -->
+  <nav class="nav" id="top">
+    <a href="#top" class="nav-logo">
+      <img src="images/logo.png" alt="Rideekanda Logo">
+      <div class="nav-logo-text">
+        <strong>Rideekanda</strong>
+        <small>Forest Monastery</small>
+      </div>
     </a>
-    <div class="topbar-nav" id="navLinks">
+    <div class="nav-links" id="navLinks">
+      <a href="https://rideekanda.org/" class="active">&larr; Home</a>
       <a href="#vision">Vision</a>
-      <a href="#gallery">Gallery</a>
       <a href="#model">3D Model</a>
+      <a href="#gallery">Gallery</a>
       <a href="#video">Film</a>
       <a href="#progress">Progress</a>
       <a href="#donate">Support</a>
-      <div class="mobile-ext-links">
-        <a href="https://rideekanda.org" class="topbar-ext-btn">&larr; Home</a>
-      </div>
     </div>
-    <div class="topbar-ext-links">
-      <a href="https://rideekanda.org" class="topbar-ext-btn">&larr; Home</a>
-      <a href="https://venr-bit.github.io/RideekandaDonate/" target="_blank" rel="noopener" class="topbar-cta">Donate &#8599;</a>
-    </div>
+    <a href="https://venr-bit.github.io/RideekandaDonate/" target="_blank" rel="noopener" class="nav-cta">Support &rarr;</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
   </nav>
 
   <!-- HERO -->
   <section class="hero fade-in">
-    <div class="hero-top">
-      <span class="num">RIDEEKANDA FOREST MONASTERY PROJECT</span>
+    <img src="images/logo.png" alt="" class="hero-logo">
+    <div class="hero-label">A Sanctuary for Practice &amp; Community</div>
+    <h1>A three-story building<br>in the <em>forest.</em></h1>
+    <p class="hero-sub">
+      A serene space for meditation, monastic life, and spiritual growth &mdash; nestled in the forest at Rideekanda Monastery. Your generous support brings this vision to life.
+    </p>
+    <div class="hero-btns">
+      <a href="#progress" class="btn-primary">View building progress &rarr;</a>
+      <a href="#vision" class="btn-outline">Explore the design</a>
     </div>
-    <div class="hero-grid">
-      <div>
-        <h1 class="hand-h">Sheltered by nature, <em>built for practice.</em></h1>
-        <p class="body-p hero-desc">
-          Embraced by the Rideekanda forest, our new three-story building is taking shape. Rather than disrupting the wilderness, this space is designed to sit quietly among the trees&mdash;offering a serene, secluded sanctuary where monks and practitioners can commit fully to intensive meditation and monastic life.
+  </section>
+
+  <!-- HERO IMAGE -->
+  <div class="hero-image fade-in">
+    <div class="hero-image-card">
+      <img src="images/building-4.png" alt="Three-story building architectural concept">
+      <div class="hero-image-badge">Architectural Concept</div>
+    </div>
+  </div>
+
+  <!-- VISION -->
+  <section class="vision fade-in" id="vision">
+    <div class="section-label" style="text-align:left;max-width:1060px;margin:0 auto 12px;">THE VISION</div>
+    <div class="vision-content">
+      <div class="vision-text">
+        <h2>A forest sanctuary for <em>mindful living.</em></h2>
+        <p>
+          Embraced by the Rideekanda forest, our new three-story building is taking shape. Rather than disrupting the wilderness, this space is designed to sit quietly among the trees &mdash; offering a serene, secluded sanctuary where monks and practitioners can commit fully to intensive meditation and monastic life.
         </p>
-        <div class="hero-stats">
-          <div>
-            <span class="num">STORIES</span>
-            <div class="hand-h" style="font-size:26px;margin-top:4px;">Three</div>
-          </div>
-          <div>
-            <span class="num">FOOTPRINT</span>
-            <div class="hand-h" style="font-size:26px;margin-top:4px;">3,000 ft&sup2;</div>
-          </div>
-          <div>
-            <span class="num">PHASE</span>
-            <div class="hand-h" style="font-size:26px;margin-top:4px;font-style:italic;color:var(--accent);">Floor I</div>
-          </div>
+        <p>
+          The design thoughtfully integrates living quarters, a meditation hall, and communal spaces &mdash; letting the architecture serve the practice with quiet dignity.
+        </p>
+      </div>
+      <div class="vision-cards">
+        <div class="vision-card">
+          <div class="vision-card-icon">&#x1F3DB;</div>
+          <h3>Main Hall</h3>
+          <p>Meditation, teachings, and gathering on the upper floor.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-icon">&#x1F6CF;</div>
+          <h3>Accommodation</h3>
+          <p>Quarters for monks and visiting practitioners on the middle floor.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-icon">&#x1F372;</div>
+          <h3>Alms Hall &amp; Kitchen</h3>
+          <p>Dining and food preparation on the ground floor.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-card-icon">&#x2728;</div>
+          <h3>Contemplation</h3>
+          <p>Natural light, gentle silence, room to sit with the breath.</p>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="images/building-4.png" alt="Three-story building long view elevation">
-      </div>
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro fade-in">
-    <div class="section-label">
-      <span class="num">01 &middot; INTRODUCTION</span>
-      <span class="line"></span>
-      <span class="num">A NOTE FROM THE COMMUNITY</span>
-    </div>
-    <h2 class="hand-h" style="font-size:48px;margin:20px 0 36px;">
-      Nestled <em>in the</em><br>tranquility of nature.
-    </h2>
-    <p class="body-p" style="font-size:18px;font-family:var(--hand);line-height:1.5;">
-      Rideekanda Forest Monastery is a haven for spiritual seekers and a home for monastic life. To continue our legacy of providing a nurturing environment for reflection &amp; community, we are constructing a three-story building that will expand our facilities &amp; enhance our capacity to serve both local and international meditation practitioners.
-    </p>
-    <p class="body-p" style="font-size:18px;font-family:var(--hand);line-height:1.5;margin-top:24px;">
-      This expansion will allow us to welcome more individuals seeking peace and spiritual growth &mdash; a step towards nurturing a larger community grounded in the principles of mindfulness and compassion.
-    </p>
-  </section>
-
-  <!-- VISION / FACILITIES -->
-  <section class="vision fade-in" id="vision">
-    <div class="vision-header">
-      <div>
-        <span class="num">02 &middot; THE VISION</span>
-        <h2 class="hand-h">Five <em>spaces</em>, one quiet whole.</h2>
-      </div>
-      <p class="body-p" style="padding-bottom:8px;">Rooms for living and meeting; rooms for cooking and care. Each floor has its own rhythm and use.</p>
-    </div>
-    <table class="facilities-table">
-      <thead>
-        <tr>
-          <th>Space</th>
-          <th>Purpose</th>
-          <th>Floor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="facility-name">Main Hall</td>
-          <td class="body-p">Meditation &middot; teachings &middot; gathering</td>
-          <td class="facility-floor">Upper Floor</td>
-        </tr>
-        <tr>
-          <td class="facility-name">Accommodation</td>
-          <td class="body-p">Quarters for monks &amp; visitors</td>
-          <td class="facility-floor">Middle Floor</td>
-        </tr>
-        <tr>
-          <td class="facility-name">Alms Hall</td>
-          <td class="body-p">The daily meal</td>
-          <td class="facility-floor">Ground Floor</td>
-        </tr>
-        <tr>
-          <td class="facility-name">Kitchen</td>
-          <td class="body-p">Modest, modern, nourishing</td>
-          <td class="facility-floor">Ground Floor</td>
-        </tr>
-        <tr>
-          <td class="facility-name">Utility &amp; Wash</td>
-          <td class="body-p">Quiet infrastructure</td>
-          <td class="facility-floor">All Floors</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery fade-in" id="gallery">
-    <div class="gallery-header">
-      <div>
-        <span class="num">03 &middot; ARCHITECTURAL STUDIES</span>
-        <h2 class="hand-h">Views, <em>elevations,</em> angles.</h2>
-      </div>
-      <p class="body-p" style="padding-bottom:8px;">A working set of perspectives and orthographic elevations from the 3D design model.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" style="grid-column:span 7;height:220px;" onclick="openLightbox(0)">
-        <img src="images/building-4.png" alt="SW perspective" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 5;height:220px;" onclick="openLightbox(1)">
-        <img src="images/building-2.png" alt="Front elevation" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(2)">
-        <img src="images/building-1.png" alt="Entrance facade" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(3)">
-        <img src="images/building-3.png" alt="Side view" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 4;height:170px;" onclick="openLightbox(4)">
-        <img src="images/building-5.png" alt="Rear elevation" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 6;height:180px;" onclick="openLightbox(5)">
-        <img src="images/building-6.png" alt="Aerial 3D perspective" loading="lazy">
-      </div>
-      <div class="gallery-item" style="grid-column:span 6;height:180px;" onclick="openLightbox(6)">
-        <img src="images/building-7.png" alt="Long facade with porch" loading="lazy">
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;align-items:center;">
-      <span class="tag">Perspective</span>
-      <span class="tag">Front</span>
-      <span class="tag">Side</span>
-      <span class="tag">Aerial</span>
-      <span class="tag">Rear</span>
-      <span style="flex:1;"></span>
-      <span class="num">CLICK TO ENLARGE &middot; &larr; / &rarr; TO NAVIGATE</span>
     </div>
   </section>
 
   <!-- 3D MODEL -->
   <section class="model-section fade-in" id="model">
-    <div class="model-header">
-      <div>
-        <span class="num">04 &middot; INTERACTIVE MODEL</span>
-        <h2 class="hand-h">Walk around <em>the building.</em></h2>
-      </div>
-      <p class="body-p" style="padding-bottom:8px;">Drag to orbit &middot; scroll to zoom &middot; double-tap to recenter.</p>
+    <div class="section-header">
+      <div class="section-label">Interactive Experience</div>
+      <h2>Explore the <em>3D design</em></h2>
+      <p>Rotate, zoom, and look around the full architectural model &mdash; every wall, every window, every line of the building.</p>
     </div>
-    <div class="model-wrap">
+    <div class="model-card">
+      <div class="model-badge">Live &middot; 3D Model</div>
       <model-viewer
         src="building-2-compressed.glb"
         alt="Interactive 3D model of the three-story monastery building"
@@ -723,41 +595,103 @@
         auto-rotate
         auto-rotate-delay="2000"
         shadow-intensity="1"
-        exposure="1"
+        exposure="0.8"
         camera-orbit="45deg 65deg auto"
-        min-camera-orbit="auto auto auto"
-        max-camera-orbit="auto auto auto"
         poster="images/building-6.png"
         loading="lazy"
-        style="background-color: var(--canvas-bg);"
+        style="background-color: #1A1612;"
       ></model-viewer>
     </div>
-    <div class="model-controls">
-      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='45deg 65deg auto'">Default</button>
-      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='0deg 75deg auto'">Front</button>
-      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='90deg 75deg auto'">Side</button>
-      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='45deg 30deg auto'">Aerial</button>
-      <button class="tag" style="cursor:pointer;" onclick="document.querySelector('model-viewer').cameraOrbit='180deg 75deg auto'">Rear</button>
-      <span style="flex:1;"></span>
-      <span class="num">DRAG &middot; SCROLL &middot; DBL-CLICK TO RECENTER</span>
+    <div class="model-hints">
+      <div class="model-hint">
+        <div class="model-hint-label">Drag</div>
+        <h4>Orbit around the building</h4>
+        <p>See every facade.</p>
+      </div>
+      <div class="model-hint">
+        <div class="model-hint-label">Pinch</div>
+        <h4>Zoom into details</h4>
+        <p>From window frame to roofline.</p>
+      </div>
+      <div class="model-hint">
+        <div class="model-hint-label">Tap</div>
+        <h4>Inspect every angle</h4>
+        <p>Walk around the entire structure.</p>
+      </div>
     </div>
+  </section>
 
+  <!-- GALLERY -->
+  <section class="gallery fade-in" id="gallery">
+    <div class="section-header">
+      <div class="section-label">Design Views</div>
+      <h2>Architectural <em>perspectives</em></h2>
+      <p>Explore the building from every angle &mdash; 3D renders, elevations, and detailed views of each space.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="grid-column:span 7;height:280px;" onclick="openLightbox(0)">
+        <img src="images/building-4.png" alt="Full design perspective" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 01</span>
+          <span class="caption">Full Design &mdash; Perspective</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 5;height:280px;" onclick="openLightbox(1)">
+        <img src="images/building-2.png" alt="Front elevation" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 02</span>
+          <span class="caption">Front Elevation</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:240px;" onclick="openLightbox(2)">
+        <img src="images/building-1.png" alt="Entrance facade" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 03</span>
+          <span class="caption">Entrance Facade</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:240px;" onclick="openLightbox(3)">
+        <img src="images/building-3.png" alt="Side view" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 04</span>
+          <span class="caption">Side &mdash; 3D View</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 4;height:240px;" onclick="openLightbox(4)">
+        <img src="images/building-5.png" alt="Rear elevation" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 05</span>
+          <span class="caption">Rear Elevation</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 6;height:260px;" onclick="openLightbox(5)">
+        <img src="images/building-6.png" alt="Aerial perspective" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 06</span>
+          <span class="caption">Aerial 3D Perspective</span>
+        </div>
+      </div>
+      <div class="gallery-item" style="grid-column:span 6;height:260px;" onclick="openLightbox(6)">
+        <img src="images/building-7.png" alt="Long facade with porch" loading="lazy">
+        <div class="gallery-item-overlay">
+          <span class="num">No. 07</span>
+          <span class="caption">Long Facade with Porch</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- VIDEO -->
   <section class="video-section fade-in" id="video">
-    <div class="video-header">
-      <div>
-        <span class="num">05 &middot; 3D WALKTHROUGH FILM</span>
-        <h2 class="hand-h">A film of <em>the building.</em></h2>
-      </div>
-      <p class="body-p" style="padding-bottom:8px;">A 3D design walkthrough showing the building from every angle.</p>
+    <div class="section-header">
+      <div class="section-label">Watch</div>
+      <h2>The vision, <em>in motion.</em></h2>
+      <p>A short video walkthrough of the building &mdash; how it sits in the forest, and how it will be used.</p>
     </div>
-    <div class="video-wrap">
+    <div class="video-card">
       <iframe
         src="https://www.youtube.com/embed/6lkENh9GOd0"
         title="ThreeStory Building 3D Walkthrough"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
@@ -766,134 +700,115 @@
 
   <!-- PROGRESS -->
   <section class="progress fade-in" id="progress">
-    <div class="progress-header">
-      <div>
-        <span class="num" style="color:rgba(250,246,236,0.6);">06 &middot; LATEST UPDATE</span>
-        <h2 class="hand-h">Where we are <span style="font-style:italic;color:var(--accent-warm);">today.</span></h2>
-      </div>
-      <p class="body-p" style="padding-bottom:8px;color:rgba(250,246,236,0.6);">The ground floor is complete and in daily use. Now we turn our attention upward.</p>
+    <div class="section-header">
+      <div class="section-label">Latest Update</div>
+      <h2>Where we are <em>today.</em></h2>
+      <p>The ground floor is complete and in daily use. Now we turn our attention upward.</p>
     </div>
-    <div class="floors-grid">
+    <div class="progress-grid">
       <div class="floor-card">
         <div class="floor-num done">00</div>
-        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">GROUND FLOOR</span>
+        <span class="floor-label">Ground Floor</span>
         <h3>Complete &amp; in use.</h3>
-        <p class="body-p">Dining hall, kitchen, common bathrooms &mdash; built, finished, operating.</p>
-        <div class="floor-bar"><div class="floor-bar-fill" style="width:100%;"></div></div>
-        <span class="num floor-status" style="color:var(--accent-warm);">&bull; FUNCTIONING</span>
+        <p>Dining hall, kitchen, common bathrooms &mdash; built, finished, operating.</p>
+        <div class="floor-bar"><div class="floor-bar-fill done" style="width:100%;"></div></div>
+        <span class="floor-status status-done">&bull; Functioning</span>
       </div>
       <div class="floor-card">
         <div class="floor-num active-num">01</div>
-        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">FIRST FLOOR</span>
+        <span class="floor-label">First Floor</span>
         <h3>In progress.</h3>
-        <p class="body-p">Next milestone: the 3,000 ft&sup2; concrete slab.</p>
-        <div class="floor-bar"><div class="floor-bar-fill" style="width:14%;"></div></div>
-        <span class="num floor-status active">&bull; SLAB PENDING</span>
+        <p>Next milestone: the 3,000 ft&sup2; concrete slab.</p>
+        <div class="floor-bar"><div class="floor-bar-fill active" style="width:14%;"></div></div>
+        <span class="floor-status status-active">&bull; Slab Pending</span>
       </div>
       <div class="floor-card">
         <div class="floor-num dim">02</div>
-        <span class="num floor-label" style="color:rgba(250,246,236,0.6);">SECOND FLOOR</span>
+        <span class="floor-label">Second Floor</span>
         <h3>Awaiting Floor 01.</h3>
-        <p class="body-p">The Main Hall will rise above the accommodation level.</p>
+        <p>The Main Hall will rise above the accommodation level.</p>
         <div class="floor-bar"><div class="floor-bar-fill" style="width:0%;"></div></div>
-        <span class="num floor-status soft">&bull; PLANNED</span>
+        <span class="floor-status status-dim">&bull; Planned</span>
       </div>
     </div>
-
     <div class="estimate-card">
       <div>
-        <span class="num">IMMEDIATE NEED &middot; FLOOR 01 SLAB</span>
+        <span class="label">Immediate Need &middot; Floor 01 Slab</span>
         <h3>3,000 ft&sup2; of structural concrete &mdash; the next thing we build.</h3>
       </div>
       <div class="estimate-amount">
-        <span class="num">ESTIMATE</span>
+        <span class="label">Estimate</span>
         <div class="big">5<span class="unit"> M</span><span class="currency"> LKR</span></div>
-        <a href="https://venr-bit.github.io/RideekandaDonate/" target="_blank" rel="noopener" class="sketch-btn" style="margin-top:14px;background:var(--accent-warm);color:var(--ink);border-color:var(--accent-warm);">Help fund the slab &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- DONATE -->
-  <section class="donate fade-in" id="donate">
-    <div class="donate-header">
-      <div>
-        <span class="num">07 &middot; SUPPORT THE BUILD</span>
-        <h2 class="hand-h">Your generosity <em>builds this.</em></h2>
+  <!-- SUPPORT / DONATE -->
+  <section class="support fade-in" id="donate">
+    <div class="support-inner">
+      <div class="section-label">Support This Place</div>
+      <h2>An act of generosity,<br>an act of <em>practice.</em></h2>
+      <p>Whether you fund a single slab or the entire floor, every contribution &mdash; large or small &mdash; helps build a lasting space for meditation, peace, and community at Rideekanda.</p>
+      <div class="support-btns">
+        <a href="https://venr-bit.github.io/RideekandaDonate/" target="_blank" rel="noopener" class="btn-primary">Make a donation</a>
+        <a href="#progress" class="btn-outline">See building progress</a>
       </div>
-      <p class="body-p" style="padding-bottom:8px;">Any amount, any currency &mdash; every contribution carries this project forward. Donations are received by the Rideekanda Senasana Foundation.</p>
-    </div>
-    <div style="text-align:center; margin-top:40px;">
-      <a href="https://venr-bit.github.io/RideekandaDonate/" target="_blank" rel="noopener" class="sketch-btn" style="font-size:22px; padding:16px 36px;">Donate Here &#8599;</a>
-    </div>
-    <div style="margin-top:48px; padding-top:40px; border-top:1.5px solid var(--ink-faint); text-align:center; max-width:600px; margin-left:auto; margin-right:auto;">
-      <h3 class="hand-h" style="font-size:32px; font-style:italic; color:var(--accent);">Thank you.</h3>
-      <p class="body-p" style="margin-top:14px; font-size:17px; color:var(--ink-2);">
-        With gratitude &amp; mett&#257; &mdash; every donation, no matter the size, helps bring this sanctuary to life. May this act of generosity bring you peace and merit.
-      </p>
+      <div class="support-stats">
+        <div>
+          <div class="support-stat-num">3</div>
+          <div class="support-stat-label">Stories</div>
+        </div>
+        <div>
+          <div class="support-stat-num">3,000</div>
+          <div class="support-stat-label">sq ft per floor</div>
+        </div>
+        <div>
+          <div class="support-stat-num">&infin;</div>
+          <div class="support-stat-label">Beings Helped</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SINHALA -->
   <section class="sinhala fade-in">
-    <span class="num">සිංහල</span>
-    <h2>මාතලේ උඩස්ගිරිය<br>රිදීකන්ද ආරණ්‍ය සේනාසනය</h2>
+    <span class="sinhala-label">&#3523;&#3538;&#3458;&#3524; &#3517;</span>
+    <h2>&#3512;&#3535;&#3501;&#3517;&#3546; &#3467;&#3497;&#3523;&#3530;&#3484;&#3538;&#3515;&#3538;&#3514;<br>&#3515;&#3538;&#3503;&#3539;&#3482;&#3505;&#3530;&#3503; &#3463;&#3515;&#3499;&#3530;&#8205;&#3514; &#3523;&#3546;&#3505;&#3535;&#3523;&#3505;&#3514;</h2>
     <div class="sinhala-body">
       <p>
-        මාතලේ උඩස්ගිරිය රිදීකන්ද ආරණ්‍ය සේනාසනය නිර්වාණ මාර්ගය සොයන භාවනායෝගීන් සඳහා
-        මනා තෝතැන්නක් වන අතර හුදෙකලාව ආරණ්‍ය පැවිදිජීවිතය සඳහා ද නිවහනකි. පැමිණෙන දෙස්විදෙස්
-        භාවනායෝගීන්ට අවශ්‍ය පහසුකම් සැපයීමත්, තාවකාලික පැවදිපුහුණුවැඩසටහන් තවදුරටත් පුළුල්
-        කිරීමටත් අවශ්‍ය පරිසරයක් නිර්මාණය කිරීමේ අදහසින්, ආරණ්‍යයේ පහසුකම් පුළුල් කරන සහ අපගේ
-        සේවා හැකියාව වැඩිකරන තෙමහල් ගොඩනැගිල්ලක් ඉදිකිරීමේ අභිලාෂකාමී ව්‍යාපෘතියක් ආරම්භ
-        කරමු.
+        &#3512;&#3535;&#3501;&#3517;&#3546; &#3467;&#3497;&#3523;&#3530;&#3484;&#3538;&#3515;&#3538;&#3514; &#3515;&#3538;&#3503;&#3539;&#3482;&#3505;&#3530;&#3503; &#3463;&#3515;&#3499;&#3530;&#8205;&#3514; &#3523;&#3546;&#3505;&#3535;&#3523;&#3505;&#3514; &#3505;&#3538;&#3515;&#3530;&#3520;&#3535;&#3499; &#3512;&#3535;&#3515;&#3530;&#3484;&#3514; &#3523;&#3549;&#3514;&#3505; &#3511;&#3535;&#3520;&#3505;&#3535;&#3514;&#3549;&#3484;&#3539;&#3505;&#3530; &#3523;&#3507;&#3524;&#3535;
+        &#3512;&#3505;&#3535; &#3501;&#3549;&#3501;&#3536;&#3505;&#3530;&#3505;&#3482;&#3530; &#3520;&#3505; &#3461;&#3501;&#3515; &#3524;&#3540;&#3503;&#3546;&#3482;&#3517;&#3535;&#3520; &#3463;&#3515;&#3499;&#3530;&#8205;&#3514; &#3508;&#3536;&#3520;&#3538;&#3503;&#3538;&#3490;&#3539;&#3520;&#3538;&#3501;&#3514; &#3523;&#3507;&#3524;&#3535; &#3503; &#3505;&#3538;&#3520;&#3524;&#3505;&#3482;&#3538;. &#3508;&#3536;&#3512;&#3538;&#3499;&#3546;&#3505; &#3503;&#3546;&#3523;&#3530;&#3520;&#3538;&#3503;&#3546;&#3523;&#3530;
+        &#3511;&#3535;&#3520;&#3505;&#3535;&#3514;&#3549;&#3484;&#3539;&#3505;&#3530;&#3495; &#3461;&#3520;&#3521;&#3530;&#8205;&#3514; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530; &#3523;&#3536;&#3508;&#3514;&#3539;&#3512;&#3501;&#3530;, &#3501;&#3535;&#3520;&#3482;&#3535;&#3517;&#3538;&#3482; &#3508;&#3536;&#3520;&#3503;&#3538;&#3508;&#3540;&#3524;&#3540;&#3499;&#3540;&#3520;&#3536;&#3497;&#3523;&#3495;&#3524;&#3505;&#3530; &#3501;&#3520;&#3503;&#3540;&#3515;&#3495;&#3501;&#3530; &#3508;&#3540;&#3525;&#3540;&#3517;&#3530;
+        &#3482;&#3538;&#3515;&#3539;&#3512;&#3495;&#3501;&#3530; &#3461;&#3520;&#3521;&#3530;&#8205;&#3514; &#3508;&#3515;&#3538;&#3523;&#3515;&#3514;&#3482;&#3530; &#3505;&#3538;&#3515;&#3530;&#3512;&#3535;&#3499;&#3514; &#3482;&#3538;&#3515;&#3539;&#3512;&#3546; &#3461;&#3503;&#3524;&#3523;&#3538;&#3505;&#3530;, &#3463;&#3515;&#3499;&#3530;&#8205;&#3514;&#3514;&#3546; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530; &#3508;&#3540;&#3525;&#3540;&#3517;&#3530; &#3482;&#3515;&#3505; &#3523;&#3524; &#3461;&#3508;&#3484;&#3546;
+        &#3523;&#3546;&#3520;&#3535; &#3524;&#3536;&#3482;&#3538;&#3514;&#3535;&#3520; &#3520;&#3536;&#3497;&#3538;&#3482;&#3515;&#3505; &#3501;&#3546;&#3512;&#3524;&#3517;&#3530; &#3484;&#3549;&#3497;&#3505;&#3536;&#3484;&#3538;&#3517;&#3530;&#3517;&#3482;&#3530; &#3465;&#3503;&#3538;&#3482;&#3538;&#3515;&#3539;&#3512;&#3546; &#3461;&#3511;&#3538;&#3517;&#3535;&#3522;&#3482;&#3535;&#3512;&#3539; &#3520;&#3530;&#8205;&#3514;&#3535;&#3508;&#3542;&#3501;&#3538;&#3514;&#3482;&#3530; &#3463;&#3515;&#3512;&#3530;&#3511;
+        &#3482;&#3515;&#3512;&#3540;.
       </p>
       <p style="margin-top:20px;">
-        එම ගොඩනැගිල්ලේ පහත පහසුකම් සහිතව ගොඩනැගීමට බලාපොරොත්තු වෙමු.
+        &#3473;&#3512; &#3484;&#3549;&#3497;&#3505;&#3536;&#3484;&#3538;&#3517;&#3530;&#3517;&#3546; &#3508;&#3524;&#3501; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530; &#3523;&#3524;&#3538;&#3501;&#3520; &#3484;&#3549;&#3497;&#3505;&#3536;&#3484;&#3539;&#3512;&#3495; &#3510;&#3517;&#3535;&#3508;&#3549;&#3515;&#3549;&#3501;&#3530;&#3501;&#3540; &#3520;&#3546;&#3512;&#3540;.
       </p>
       <ul style="margin-top:12px;padding-left:20px;list-style:disc;">
-        <li><strong>ප්‍රධාන ශාලාව:</strong> භාවනා වැඩසටහන්, ඉගැන්වීම් සිදුකිරීමට</li>
-        <li><strong>නවාතැන් පහසුකම්:</strong> පුහුණු භික්ෂූන් වහන්සේලාට සහ භාවනා යෝගීන් සඳහා නවාතැන් පහසුකම්.</li>
-        <li><strong>දාන ශාලාව සහ මුළුතැන්ගෙය:</strong> ආහාර පිළියෙල කිරීම සඳහා නවීන පහසුකම්.</li>
-        <li><strong>වැසිකිළි පද්ධතිය:</strong> වැසිකිළි සහ සනීපාරක්ෂාව සඳහා අත්‍යවශ්‍ය පහසුකම්.</li>
+        <li><strong>&#3508;&#3530;&#8205;&#3515;&#3504;&#3535;&#3505; &#3521;&#3535;&#3517;&#3535;&#3520;:</strong> &#3511;&#3535;&#3520;&#3505;&#3535; &#3520;&#3536;&#3497;&#3523;&#3495;&#3524;&#3505;&#3530;, &#3465;&#3484;&#3536;&#3505;&#3530;&#3520;&#3539;&#3512;&#3530; &#3523;&#3538;&#3503;&#3540;&#3482;&#3538;&#3515;&#3539;&#3512;&#3495;</li>
+        <li><strong>&#3505;&#3520;&#3535;&#3501;&#3536;&#3505;&#3530; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530;:</strong> &#3508;&#3540;&#3524;&#3540;&#3499;&#3540; &#3511;&#3538;&#3482;&#3530;&#3522;&#3542;&#3505;&#3530; &#3520;&#3524;&#3505;&#3530;&#3523;&#3546;&#3517;&#3535;&#3495; &#3523;&#3524; &#3511;&#3535;&#3520;&#3505;&#3535; &#3514;&#3549;&#3484;&#3539;&#3505;&#3530; &#3523;&#3507;&#3524;&#3535; &#3505;&#3520;&#3535;&#3501;&#3536;&#3505;&#3530; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530;.</li>
+        <li><strong>&#3503;&#3535;&#3505; &#3521;&#3535;&#3517;&#3535;&#3520; &#3523;&#3524; &#3512;&#3540;&#3525;&#3540;&#3501;&#3536;&#3505;&#3530;&#3484;&#3546;&#3514;:</strong> &#3463;&#3524;&#3535;&#3515; &#3508;&#3538;&#3525;&#3538;&#3514;&#3546;&#3517; &#3482;&#3538;&#3515;&#3539;&#3512; &#3523;&#3507;&#3524;&#3535; &#3505;&#3520;&#3539;&#3505; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530;.</li>
+        <li><strong>&#3520;&#3536;&#3523;&#3538;&#3482;&#3538;&#3525;&#3538; &#3508;&#3503;&#3530;&#3504;&#3501;&#3538;&#3514;:</strong> &#3520;&#3536;&#3523;&#3538;&#3482;&#3538;&#3525;&#3538; &#3523;&#3524; &#3523;&#3505;&#3539;&#3508;&#3535;&#3515;&#3482;&#3530;&#3522;&#3535;&#3520; &#3523;&#3507;&#3524;&#3535; &#3461;&#3501;&#3530;&#8205;&#3514;&#3520;&#3521;&#3530;&#8205;&#3514; &#3508;&#3524;&#3523;&#3540;&#3482;&#3512;&#3530;.</li>
       </ul>
       <p style="margin-top:20px;">
-        මෙම උතුම් ව්‍යාපෘතිය සාර්ථක කරගැනීමට දායක වෙමින් එම කුසල ශක්තියේ බලමහිමයෙන් ඔබටත් නිර්වාන
-        අවබෝධය පිණිස දස පාරමිතා පූර්ණය වීම පිණිස හේතු වාසනා වේවායි අප පර්ථනා කරමු.
+        &#3512;&#3546;&#3512; &#3467;&#3501;&#3540;&#3512;&#3530; &#3520;&#3530;&#8205;&#3514;&#3535;&#3508;&#3542;&#3501;&#3538;&#3514; &#3523;&#3535;&#3515;&#3530;&#3502;&#3482; &#3482;&#3515;&#3484;&#3536;&#3505;&#3539;&#3512;&#3495; &#3503;&#3535;&#3514;&#3482; &#3520;&#3546;&#3512;&#3538;&#3505;&#3530; &#3473;&#3512; &#3482;&#3540;&#3523;&#3517; &#3521;&#3482;&#3530;&#3501;&#3538;&#3514;&#3546; &#3510;&#3517;&#3512;&#3524;&#3538;&#3512;&#3514;&#3546;&#3505;&#3530; &#3476;&#3510;&#3495;&#3501;&#3530; &#3505;&#3538;&#3515;&#3530;&#3520;&#3535;&#3505;
+        &#3461;&#3520;&#3510;&#3549;&#3504;&#3514; &#3508;&#3538;&#3499;&#3538;&#3523; &#3503;&#3523; &#3508;&#3535;&#3515;&#3512;&#3538;&#3501;&#3535; &#3508;&#3542;&#3515;&#3530;&#3499;&#3514; &#3520;&#3539;&#3512; &#3508;&#3538;&#3499;&#3538;&#3523; &#3524;&#3546;&#3501;&#3540; &#3520;&#3535;&#3523;&#3505;&#3535; &#3520;&#3546;&#3520;&#3535;&#3514;&#3538; &#3461;&#3508; &#3508;&#3515;&#3530;&#3502;&#3505;&#3535; &#3482;&#3515;&#3512;&#3540;.
       </p>
       <p style="margin-top:24px;text-align:center;">
-        <strong>රිදීකන්ද ආරණ්‍ය සේනාසනය.</strong><br>
-        උඩස්ගිරිය<br>
-        මාතලේ
+        <strong>&#3515;&#3538;&#3503;&#3539;&#3482;&#3505;&#3530;&#3503; &#3463;&#3515;&#3499;&#3530;&#8205;&#3514; &#3523;&#3546;&#3505;&#3535;&#3523;&#3505;&#3514;.</strong><br>
+        &#3467;&#3497;&#3523;&#3530;&#3484;&#3538;&#3515;&#3538;&#3514;<br>
+        &#3512;&#3535;&#3501;&#3517;&#3546;
       </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="images/logo.png" alt="Rideekanda Logo">
-          <div class="hand-h" style="font-size:22px;color:var(--paper);">Rideekanda Forest Monastery</div>
-        </div>
-        <p class="footer-quote">"With gratitude &amp; mett&#257; &mdash; the Rideekanda community."</p>
-      </div>
-      <div class="footer-col">
-        <h4>Location</h4>
-        <p>Udasgiriya, Matale, Sri Lanka</p>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>+94 714 283 258 &middot; +94 742 252 980<br><a href="https://www.rideekanda.com/contact/" target="_blank" rel="noopener" style="color:rgba(250,246,236,0.6);">rideekanda.com</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Phase</h4>
-        <p>Floor 01 &middot; Slab &middot; 5,000,000 LKR</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="num">&copy; 2026 RIDEEKANDA SENASANA FOUNDATION</span>
-      <span class="num">BUILT WITH METT&#256; &middot; FOR ALL BEINGS</span>
-    </div>
+    <div class="footer-brand">Rideekanda Forest Monastery</div>
+    <p class="footer-quote">May all beings be free from suffering.</p>
+    <p class="footer-copy">Three-Story Building Project &middot; &copy; 2026 &middot; Built with mindfulness and care.</p>
   </footer>
 
   <!-- LIGHTBOX -->
@@ -905,15 +820,12 @@
     <div class="lightbox-counter" id="lightboxCounter"></div>
   </div>
 
-  <!-- COPY TOAST -->
-  <div class="copy-toast" id="copyToast">Copied!</div>
-
   <script>
     // Mobile menu
     document.getElementById('hamburger').addEventListener('click', function() {
       document.getElementById('navLinks').classList.toggle('open');
     });
-    document.querySelectorAll('.topbar-nav a').forEach(function(a) {
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
       a.addEventListener('click', function() {
         document.getElementById('navLinks').classList.remove('open');
       });
@@ -921,20 +833,15 @@
 
     // Lightbox
     var images = [
-      'images/building-4.png',
-      'images/building-2.png',
-      'images/building-1.png',
-      'images/building-3.png',
-      'images/building-5.png',
-      'images/building-6.png',
+      'images/building-4.png','images/building-2.png','images/building-1.png',
+      'images/building-3.png','images/building-5.png','images/building-6.png',
       'images/building-7.png'
     ];
     var currentIdx = 0;
-
     function openLightbox(idx) {
       currentIdx = idx;
       document.getElementById('lightboxImg').src = images[idx];
-      document.getElementById('lightboxCounter').textContent = (idx + 1) + ' / ' + images.length;
+      document.getElementById('lightboxCounter').textContent = (idx+1) + ' / ' + images.length;
       document.getElementById('lightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -945,11 +852,9 @@
     function navLightbox(dir) {
       currentIdx = (currentIdx + dir + images.length) % images.length;
       document.getElementById('lightboxImg').src = images[currentIdx];
-      document.getElementById('lightboxCounter').textContent = (currentIdx + 1) + ' / ' + images.length;
+      document.getElementById('lightboxCounter').textContent = (currentIdx+1) + ' / ' + images.length;
     }
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-      if (e.target === this) closeLightbox();
-    });
+    document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
     document.addEventListener('keydown', function(e) {
       if (!document.getElementById('lightbox').classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
@@ -957,25 +862,13 @@
       if (e.key === 'ArrowRight') navLightbox(1);
     });
 
-    // Copy to clipboard
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(function() {
-        var toast = document.getElementById('copyToast');
-        toast.classList.add('show');
-        setTimeout(function() { toast.classList.remove('show'); }, 1500);
-      });
-    }
-
     // Fade-in on scroll
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-    document.querySelectorAll('.fade-in').forEach(function(el) {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
   </script>
 </body>
 </html>
